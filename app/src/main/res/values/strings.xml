@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">WFM_Traffic</string>
+
+
+    <string name="title_1">TODAY\'S TASK</string>
+    <string name="title_2">APPROVE TASK</string>
+    <string name="title_3">APPROVE LEAVE</string>
+    <string name="title_4">FINES</string>
+    <string name="title_5">OVERTIME</string>
+
+    <string name="text_1">14</string>
 </resources>

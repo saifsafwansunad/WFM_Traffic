@@ -1,9 +1,14 @@
-package com.example.wfm_traffic;
+package com.example.wfm_traffic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,10 +18,13 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.example.wfm_traffic.CardItem;
+import com.example.wfm_traffic.R;
+import com.example.wfm_traffic.ShadowTransformer;
+import com.example.wfm_traffic.adapter.CardFragmentPagerAdapter;
+import com.example.wfm_traffic.adapter.CardPagerAdapter;
 import com.example.wfm_traffic.adapter.ExpandableListAdapter;
-import com.example.wfm_traffic.adapter.NavItemAdapter;
 import com.example.wfm_traffic.model.MenuModel;
-import com.example.wfm_traffic.model.NavItem;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -36,13 +44,39 @@ public class MainActivity extends AppCompatActivity {
     HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
     View viewHeader;
 
+
+    private ViewPager mViewPager;
+    private CardPagerAdapter mCardAdapter;
+    private ShadowTransformer mCardShadowTransformer;
+    private CardFragmentPagerAdapter mFragmentCardAdapter;
+    private ShadowTransformer mFragmentCardShadowTransformer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        mCardAdapter = new CardPagerAdapter();
+        mCardAdapter.addCardItem(new CardItem(R.string.title_1, R.string.text_1,R.mipmap.clipboard));
+        mCardAdapter.addCardItem(new CardItem(R.string.title_2, R.string.text_1,R.mipmap.approve_tasks));
+        mCardAdapter.addCardItem(new CardItem(R.string.title_3, R.string.text_1,R.mipmap.calendar));
+        mCardAdapter.addCardItem(new CardItem(R.string.title_4, R.string.text_1,R.mipmap.fine));
+        mCardAdapter.addCardItem(new CardItem(R.string.title_5, R.string.text_1,R.mipmap.overtime));
+
+        mFragmentCardAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(),
+                dpToPixels(2, this));
+
+        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
+        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+
+        mViewPager.setAdapter(mCardAdapter);
+        mViewPager.setPageTransformer(false, mCardShadowTransformer);
+        mViewPager.setOffscreenPageLimit(3);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
 
 
         expandableListView = findViewById(R.id.expandableListView);
@@ -79,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public static float dpToPixels(int dp, Context context) {
+        return dp * (context.getResources().getDisplayMetrics().density);
+    }
+
 
     private void populateExpandableList() {
         expandableListAdapter = new ExpandableListAdapter(this, headerList, childList);
@@ -200,4 +239,21 @@ public class MainActivity extends AppCompatActivity {
 //        drawer.closeDrawer(firstDrawer);
 //        drawer.openDrawer(secondDrawer);
 //    }
+
+
+
+    public static Bitmap scaleDown(Bitmap realImage, float maxImageSize,
+                                   boolean filter) {
+        float ratio = Math.min(
+                (float) maxImageSize / realImage.getWidth(),
+                (float) maxImageSize / realImage.getHeight());
+        int width = Math.round((float) ratio * realImage.getWidth());
+        int height = Math.round((float) ratio * realImage.getHeight());
+
+        Bitmap newBitmap = Bitmap.createScaledBitmap(realImage, width,
+                height, filter);
+        return newBitmap;
+    }
+
+
 }
