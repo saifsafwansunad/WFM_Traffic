@@ -351,7 +351,14 @@
 
 
         </androidx.cardview.widget.CardView>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:text="TASKS/WEEKLY"
+            android:textColor="@color/black"/>
         <com.anychart.AnyChartView
             android:layout_width="300dp"
             android:padding="10dp"

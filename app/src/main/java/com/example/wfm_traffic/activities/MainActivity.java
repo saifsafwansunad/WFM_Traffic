@@ -24,6 +24,8 @@ import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
+import com.anychart.core.ui.Legend;
+import com.anychart.core.ui.Paginator;
 import com.example.wfm_traffic.CardItem;
 import com.example.wfm_traffic.R;
 import com.example.wfm_traffic.ShadowTransformer;
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     private SliderTooltip sliderTooltip;
     HomePageBinding homePageBinding;
 
-    String[] strAr = {"Ani", "Sam", "Joe","agav"};
-    int[] intvalues={1000,2000,4000,4856};
+    String[] strAr = {"Submitted", "Verified", "Approved","Rejected","IA Approved","IA Rejected"};
+    int[] intvalues={501,300,204,165,128,117};
     AnyChartView anyChartViewPieChart;
 
     private ViewPager mViewPager;
@@ -154,6 +156,8 @@ setupChartView();
 
     private void setupChartView() {
 Pie pie= AnyChart.pie();
+       pie.legend(false);
+
 List<DataEntry> datEntries=new ArrayList();
 for (int i=0;i<strAr.length;i++){
     datEntries.add(new ValueDataEntry(strAr[i],intvalues[i]));
