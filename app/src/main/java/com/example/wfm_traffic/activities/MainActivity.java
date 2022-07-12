@@ -9,6 +9,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,12 +25,23 @@ import com.example.wfm_traffic.ShadowTransformer;
 import com.example.wfm_traffic.adapter.CardFragmentPagerAdapter;
 import com.example.wfm_traffic.adapter.CardPagerAdapter;
 import com.example.wfm_traffic.adapter.ExpandableListAdapter;
+import com.example.wfm_traffic.chart.extensions.ChartExtensionsKt;
+import com.example.wfm_traffic.chart.extensions.LineChartValue;
+import com.example.wfm_traffic.chart.tooltip.SliderTooltip;
+
+import com.example.wfm_traffic.databinding.ActivityMainBinding;
+import com.example.wfm_traffic.databinding.HomePageBinding;
 import com.example.wfm_traffic.model.MenuModel;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import kotlin.Triple;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     List<MenuModel> headerList = new ArrayList<>();
     HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
     View viewHeader;
+    private  ActivityMainBinding binding;
+    private SliderTooltip sliderTooltip;
+    HomePageBinding homePageBinding;
 
 
     private ViewPager mViewPager;
@@ -51,10 +66,24 @@ public class MainActivity extends AppCompatActivity {
     private CardFragmentPagerAdapter mFragmentCardAdapter;
     private ShadowTransformer mFragmentCardShadowTransformer;
 
+    public MainActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        homePageBinding= HomePageBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        sliderTooltip = new SliderTooltip();
+        ActivityFunc fun = new ActivityFunc();
+        fun.setupLinearChart(sliderTooltip,binding,getApplicationContext());
+        fun.setupLinearChart1(sliderTooltip,binding,getApplicationContext());
+        fun.setupLinearChart2(sliderTooltip,binding,getApplicationContext());
+        fun.setupLinearChart3(sliderTooltip,binding,getApplicationContext());
+
+//        setupLinearChart();
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mCardAdapter = new CardPagerAdapter();
@@ -113,6 +142,61 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+//    private void setupLinearChart() {
+//        // Chart data
+//        Date currentDate = new Date();
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(currentDate);
+//        //Create a fake data for one month
+//        HashMap<String, List<String>> remoteData = new HashMap<>();
+//        remoteData.put("1", Arrays.asList("11"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("2", Arrays.asList("12"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("3", Arrays.asList("13"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("4", Arrays.asList("10"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("5", Arrays.asList("11"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("6", Arrays.asList("7"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("7", Arrays.asList("9"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("8", Arrays.asList("4"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("9", Arrays.asList("5"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("10", Arrays.asList("6"));
+//        calendar.add(Calendar.DATE, -1);
+//        remoteData.put("11", Arrays.asList("6"));
+//        remoteData.put("12", Arrays.asList("7"));
+//        remoteData.put("13", Arrays.asList("4"));
+//        remoteData.put("14", Arrays.asList("3"));
+//        remoteData.put("15", Arrays.asList("11"));
+//        remoteData.put("16", Arrays.asList("11"));
+//        remoteData.put("17", Arrays.asList("11"));
+//        remoteData.put("18", Arrays.asList("11"));
+//        remoteData.put("19", Arrays.asList("11"));
+//        remoteData.put("20", Arrays.asList("11"));
+//
+//        Log.d("chartremotedata", remoteData.toString());
+//
+//        // Convert data to chart input
+//        ArrayList<LineChartValue> lineChartData = ChartExtensionsKt.toOralHygieneChart(remoteData);
+//        Log.d("chartremotedata", lineChartData.toString());
+//        ArrayList<Triple<Drawable, String, Float>> convertedData = ChartExtensionsKt.convertToLinearChartData(lineChartData);
+//        Log.d("chartremotedata", convertedData.toString());
+//        // Setup tooltip and chart color
+//        // In the triple data:
+//        // first = Drawable
+//        // second = date
+//        // third = score
+//        boolean isDataFake = false;
+//        SliderTooltip sliderTooltip = new SliderTooltip();
+//
+//    }
 
     public static float dpToPixels(int dp, Context context) {
         return dp * (context.getResources().getDisplayMetrics().density);
