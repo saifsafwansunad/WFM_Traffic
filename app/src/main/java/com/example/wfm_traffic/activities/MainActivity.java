@@ -8,6 +8,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -39,14 +41,30 @@ import com.example.wfm_traffic.chart.tooltip.SliderTooltip;
 import com.example.wfm_traffic.databinding.ActivityMainBinding;
 import com.example.wfm_traffic.databinding.HomePageBinding;
 import com.example.wfm_traffic.model.MenuModel;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.Utils;
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import kotlin.Triple;
 
@@ -65,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private  ActivityMainBinding binding;
     private SliderTooltip sliderTooltip;
     HomePageBinding homePageBinding;
+    private LineChart volumeReportChart;
 
     String[] strAr = {"Submitted", "Verified", "Approved","Rejected","IA Approved","IA Rejected"};
     int[] intvalues={501,300,204,165,128,117};
@@ -88,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         sliderTooltip = new SliderTooltip();
         ActivityFunc fun = new ActivityFunc();
-        fun.setupLinearChart(sliderTooltip,binding,getApplicationContext());
-        fun.setupLinearChart1(sliderTooltip,binding,getApplicationContext());
-        fun.setupLinearChart2(sliderTooltip,binding,getApplicationContext());
-        fun.setupLinearChart3(sliderTooltip,binding,getApplicationContext());
+        fun.setupLinearChart(new SliderTooltip(),binding,getApplicationContext());
+        fun.setupLinearChart1(new SliderTooltip(),binding,getApplicationContext());
+        fun.setupLinearChart2(new SliderTooltip(),binding,getApplicationContext());
+        fun.setupLinearChart3(new SliderTooltip(),binding,getApplicationContext());
 anyChartViewPieChart=(AnyChartView)findViewById(R.id.piechart);
 setupChartView();
 //        setupLinearChart();
@@ -152,6 +171,157 @@ setupChartView();
                 }
             }
         });
+
+        volumeReportChart = findViewById(R.id.reportingChart);
+        volumeReportChart.setTouchEnabled(true);
+        volumeReportChart.setPinchZoom(true);
+        List<String> dates = new ArrayList<>();
+        dates.add("2022-04-14");
+        dates.add("2022-04-21");
+        dates.add("2022-04-28");
+        dates.add("2022-04-25");
+        List<Double> allAmounts = new ArrayList<>();
+        allAmounts.add(42.1);
+        allAmounts.add(59.3);
+        allAmounts.add(68.7);
+        allAmounts.add(82.4);
+        renderData(dates,allAmounts);
+
+    }
+
+    public void renderData(List<String> dates, List<Double> allAmounts) {
+
+        final ArrayList<String> xAxisLabel = new ArrayList<>();
+        xAxisLabel.add("1");
+        xAxisLabel.add("7");
+        xAxisLabel.add("14");
+        xAxisLabel.add("21");
+        xAxisLabel.add("28");
+        xAxisLabel.add("30");
+
+        XAxis xAxis = volumeReportChart.getXAxis();
+        XAxis.XAxisPosition position = XAxis.XAxisPosition.BOTTOM;
+        xAxis.setPosition(position);
+        xAxis.enableGridDashedLine(2f, 7f, 0f);
+        xAxis.setAxisMaximum(5f);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setLabelCount(6, true);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setGranularity(7f);
+        xAxis.setLabelRotationAngle(315f);
+
+        xAxis.setValueFormatter(new ClaimsXAxisValueFormatter(dates));
+
+        xAxis.setCenterAxisLabels(true);
+
+
+        xAxis.setDrawLimitLinesBehindData(true);
+
+
+
+        LimitLine ll1 = new LimitLine(30f,"Title");
+        ll1.setLineColor(getResources().getColor(R.color.gray400Dark));
+        ll1.setLineWidth(4f);
+        ll1.enableDashedLine(10f, 10f, 0f);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
+        ll1.setTextSize(10f);
+
+        LimitLine ll2 = new LimitLine(35f, "");
+        ll2.setLineWidth(4f);
+        ll2.enableDashedLine(10f, 10f, 0f);
+        ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
+        ll2.setTextSize(10f);
+        ll2.setLineColor(Color.parseColor("#FFFFFF"));
+
+        xAxis.removeAllLimitLines();
+        xAxis.addLimitLine(ll1);
+        xAxis.addLimitLine(ll2);
+
+
+        YAxis leftAxis = volumeReportChart.getAxisLeft();
+        leftAxis.removeAllLimitLines();
+        //leftAxis.addLimitLine(ll1);
+        //leftAxis.addLimitLine(ll2);
+
+        leftAxis.setAxisMaximum(findMaximumValueInList(allAmounts).floatValue() + 100f);
+        leftAxis.setAxisMinimum(0f);
+        leftAxis.enableGridDashedLine(10f, 10f, 0f);
+        leftAxis.setDrawZeroLine(false);
+        leftAxis.setDrawLimitLinesBehindData(false);
+        //XAxis xAxis = mBarChart.getXAxis();
+        leftAxis.setValueFormatter(new ClaimsYAxisValueFormatter());
+
+        volumeReportChart.getDescription().setEnabled(true);
+        Description description = new Description();
+        // description.setText(UISetters.getFullMonthName());//commented for weekly reporting
+        description.setText("Week");
+        description.setTextSize(15f);
+        volumeReportChart.getDescription().setPosition(0f, 0f);
+        volumeReportChart.setDescription(description);
+        volumeReportChart.getAxisRight().setEnabled(false);
+
+        //setData()-- allAmounts is data to display;
+        setDataForWeeksWise(allAmounts);
+
+    }
+
+    private void setDataForWeeksWise(List<Double> amounts) {
+
+        ArrayList<Entry> values = new ArrayList<>();
+        values.add(new Entry(1, amounts.get(0).floatValue()));
+        values.add(new Entry(2, amounts.get(1).floatValue()));
+        values.add(new Entry(3, amounts.get(2).floatValue()));
+        values.add(new Entry(4, amounts.get(3).floatValue()));
+
+
+        LineDataSet set1;
+        if (volumeReportChart.getData() != null &&
+                volumeReportChart.getData().getDataSetCount() > 0) {
+            set1 = (LineDataSet) volumeReportChart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            volumeReportChart.getData().notifyDataChanged();
+            volumeReportChart.notifyDataSetChanged();
+        } else {
+            set1 = new LineDataSet(values, "Total volume");
+            set1.setDrawCircles(true);
+            set1.enableDashedLine(10f, 0f, 0f);
+            set1.enableDashedHighlightLine(10f, 0f, 0f);
+            set1.setColor(getResources().getColor(R.color.violet));
+            set1.setCircleColor(getResources().getColor(R.color.violet));
+            set1.setLineWidth(2f);//line size
+            set1.setCircleRadius(5f);
+            set1.setDrawCircleHole(true);
+            set1.setValueTextSize(10f);
+            set1.setDrawFilled(true);
+            set1.setFormLineWidth(5f);
+            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            set1.setFormSize(5.f);
+
+            if (Utils.getSDKInt() >= 18) {
+//                Drawable drawable = ContextCompat.getDrawable(this, R.drawable.blue_bg);
+//                set1.setFillDrawable(drawable);
+                set1.setFillColor(Color.WHITE);
+
+            } else {
+                set1.setFillColor(Color.WHITE);
+            }
+            set1.setDrawValues(true);
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1);
+            LineData data = new LineData(dataSets);
+
+            volumeReportChart.setData(data);
+        }
+    }
+
+    private Number findMaximumValueInList(List<Double> list) {
+        // check list is empty or not
+        if (list == null || list.size() == 0) {
+            return Integer.MIN_VALUE;
+        }
+
+        // return maximum value of the ArrayList
+        return Collections.max(list);
     }
 
     private void setupChartView() {
@@ -364,6 +534,60 @@ anyChartViewPieChart.setChart(pie);
 
 
 
+
+
+    public class ClaimsXAxisValueFormatter extends ValueFormatter {
+
+        List<String> datesList;
+
+        public ClaimsXAxisValueFormatter(List<String> arrayOfDates) {
+            this.datesList = arrayOfDates;
+        }
+
+
+        @Override
+        public String getAxisLabel(float value, AxisBase axis) {
+/*
+Depends on the position number on the X axis, we need to display the label, Here, this is the logic to convert the float value to integer so that I can get the value from array based on that integer and can convert it to the required value here, month and date as value. This is required for my data to show properly, you can customize according to your needs.
+*/
+            Integer position = Math.round(value);
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM dd");
+
+            if (value > 1 && value < 2) {
+                position = 0;
+            } else if (value > 2 && value < 3) {
+                position = 1;
+            } else if (value > 3 && value < 4) {
+                position = 2;
+            } else if (value > 4 && value <= 5) {
+                position = 3;
+            }
+            if (position < datesList.size())
+                return sdf.format(new Date((getDateInMilliSeconds(datesList.get(position), "yyyy-MM-dd"))));
+            return "";
+        }
+    }
+
+    public static long getDateInMilliSeconds(String givenDateString, String format) {
+        String DATE_TIME_FORMAT = format;
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_TIME_FORMAT, Locale.US);
+        long timeInMilliseconds = 1;
+        try {
+            Date mDate = sdf.parse(givenDateString);
+            timeInMilliseconds = mDate.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return timeInMilliseconds;
+    }
+
+    public class ClaimsYAxisValueFormatter extends ValueFormatter {
+
+        @Override
+        public String getAxisLabel(float value, AxisBase axis) {
+            return "R " +value;
+        }
+    }
 
 
 }
