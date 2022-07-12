@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
@@ -16,23 +17,22 @@
             android:layout_marginTop="30dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingEnd="@dimen/card_padding"
+            android:paddingStart="@dimen/card_padding"
             android:paddingLeft="@dimen/card_padding"
-            android:paddingRight="@dimen/card_padding"
-            android:paddingStart="@dimen/card_padding" />
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding" />
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="325dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
 
             <!--
             In the above cardview widget
@@ -49,18 +49,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_weight="2"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:tag="image_tag"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circular"
                     android:src="@mipmap/approve_tasks"
-                    android:background="@drawable/circular"/>
+                    android:tag="image_tag" />
 
                 <TextView
                     android:id="@+id/textViewName"
@@ -68,9 +67,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="Weekly Tasks"
-                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewVersion"
@@ -78,9 +77,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="26"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -104,20 +103,18 @@
                 app:chart_labelsYColor="@color/linkWithoutButton" />
 
 
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="325dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
 
             <!--
             In the above cardview widget
@@ -134,18 +131,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_weight="2"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView1"
-                    android:tag="image_tag"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circular"
                     android:src="@mipmap/fine"
-                    android:background="@drawable/circular"/>
+                    android:tag="image_tag" />
 
                 <TextView
                     android:id="@+id/textViewName1"
@@ -153,9 +149,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="Monthly Tasks"
-                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewVersion1"
@@ -163,9 +159,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="14"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -189,21 +185,19 @@
                 app:chart_labelsYColor="@color/linkWithoutButton" />
 
 
-
         </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="325dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
 
             <!--
             In the above cardview widget
@@ -220,18 +214,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_weight="2"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:tag="image_tag"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circular"
                     android:src="@mipmap/fine"
-                    android:background="@drawable/circular"/>
+                    android:tag="image_tag" />
 
                 <TextView
                     android:id="@+id/textViewName2"
@@ -239,9 +232,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="Weekly Fines"
-                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewVersion2"
@@ -249,9 +242,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="R 976"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -275,20 +268,18 @@
                 app:chart_labelsYColor="@color/linkWithoutButton" />
 
 
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="325dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
 
             <!--
             In the above cardview widget
@@ -305,18 +296,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_weight="2"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:tag="image_tag"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circular"
                     android:src="@mipmap/fine"
-                    android:background="@drawable/circular"/>
+                    android:tag="image_tag" />
 
                 <TextView
                     android:id="@+id/textViewName3"
@@ -324,9 +314,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="Monthly Fines"
-                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewVersion3"
@@ -334,9 +324,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:text="R 11,476"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -360,7 +350,199 @@
                 app:chart_labelsYColor="@color/linkWithoutButton" />
 
 
-
         </androidx.cardview.widget.CardView>
+
+        <com.anychart.AnyChartView
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="300dp"
+            android:id="@+id/piechart"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:text="LEAVES SHEET"
+            android:textColor="@color/black"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TableRow
+                android:background="#0079D6"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="Leaves Name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="No. of Leaves" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="Used Leaves" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="Balance Leaves" />
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Casual Leaves" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="14" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="14" />
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Family Responsibility" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5" />
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Annual" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8" />
+            </TableRow>
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sick" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8" />
+            </TableRow>
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Maternity" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="19" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

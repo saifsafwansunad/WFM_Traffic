@@ -19,6 +19,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.example.wfm_traffic.CardItem;
 import com.example.wfm_traffic.R;
 import com.example.wfm_traffic.ShadowTransformer;
@@ -59,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
     private SliderTooltip sliderTooltip;
     HomePageBinding homePageBinding;
 
+    String[] strAr = {"Ani", "Sam", "Joe","agav"};
+    int[] intvalues={1000,2000,4000,4856};
+    AnyChartView anyChartViewPieChart;
 
     private ViewPager mViewPager;
     private CardPagerAdapter mCardAdapter;
@@ -82,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
         fun.setupLinearChart1(sliderTooltip,binding,getApplicationContext());
         fun.setupLinearChart2(sliderTooltip,binding,getApplicationContext());
         fun.setupLinearChart3(sliderTooltip,binding,getApplicationContext());
-
+anyChartViewPieChart=(AnyChartView)findViewById(R.id.piechart);
+setupChartView();
 //        setupLinearChart();
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
@@ -141,6 +150,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void setupChartView() {
+Pie pie= AnyChart.pie();
+List<DataEntry> datEntries=new ArrayList();
+for (int i=0;i<strAr.length;i++){
+    datEntries.add(new ValueDataEntry(strAr[i],intvalues[i]));
+}
+pie.data(datEntries);
+anyChartViewPieChart.setChart(pie);
     }
 
 //    private void setupLinearChart() {
@@ -338,6 +357,9 @@ public class MainActivity extends AppCompatActivity {
                 height, filter);
         return newBitmap;
     }
+
+
+
 
 
 }
