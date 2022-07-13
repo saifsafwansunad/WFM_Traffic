@@ -3,15 +3,14 @@ package com.example.wfm_traffic.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,16 +25,13 @@ import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
-import com.anychart.core.ui.Legend;
-import com.anychart.core.ui.Paginator;
-import com.example.wfm_traffic.CardItem;
 import com.example.wfm_traffic.R;
 import com.example.wfm_traffic.ShadowTransformer;
 import com.example.wfm_traffic.adapter.CardFragmentPagerAdapter;
 import com.example.wfm_traffic.adapter.CardPagerAdapter;
 import com.example.wfm_traffic.adapter.ExpandableListAdapter;
-import com.example.wfm_traffic.chart.extensions.ChartExtensionsKt;
-import com.example.wfm_traffic.chart.extensions.LineChartValue;
+import com.example.wfm_traffic.adapter.helperclasses.adapteCard;
+import com.example.wfm_traffic.adapter.helperclasses.cardmodel;
 import com.example.wfm_traffic.chart.tooltip.SliderTooltip;
 
 import com.example.wfm_traffic.databinding.ActivityMainBinding;
@@ -58,17 +54,13 @@ import com.google.android.material.navigation.NavigationView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import kotlin.Triple;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements adapteCard.ListItemClickListener {
 
     ImageView drawer_left;
     private DrawerLayout drawer;
@@ -85,11 +77,14 @@ public class MainActivity extends AppCompatActivity {
     HomePageBinding homePageBinding;
     private LineChart volumeReportChart;
 
+    RecyclerView recyclerViewCard;
+    RecyclerView.Adapter adapter;
+
     String[] strAr = {"Submitted", "Verified", "Approved","Rejected","IA Approved","IA Rejected"};
     int[] intvalues={501,300,204,165,128,117};
     AnyChartView anyChartViewPieChart;
 
-    private ViewPager mViewPager;
+//    private ViewPager mViewPager;
     private CardPagerAdapter mCardAdapter;
     private ShadowTransformer mCardShadowTransformer;
     private CardFragmentPagerAdapter mFragmentCardAdapter;
@@ -114,24 +109,25 @@ public class MainActivity extends AppCompatActivity {
 anyChartViewPieChart=(AnyChartView)findViewById(R.id.piechart);
 setupChartView();
 //        setupLinearChart();
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+//        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+recyclerViewCard=(RecyclerView)findViewById(R.id.card_recycler);
+setuptCardRecyclerview();
+//        mCardAdapter = new CardPagerAdapter();
+//        mCardAdapter.addCardItem(new CardItem(R.string.title_1, R.string.text_1,R.mipmap.clipboard));
+//        mCardAdapter.addCardItem(new CardItem(R.string.title_2, R.string.text_1,R.mipmap.approve_tasks));
+//        mCardAdapter.addCardItem(new CardItem(R.string.title_3, R.string.text_1,R.mipmap.calendar));
+//        mCardAdapter.addCardItem(new CardItem(R.string.title_4, R.string.text_1,R.mipmap.fine));
+//        mCardAdapter.addCardItem(new CardItem(R.string.title_5, R.string.text_1,R.mipmap.overtime));
+//
+//        mFragmentCardAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(),
+//                dpToPixels(2, this));
 
-        mCardAdapter = new CardPagerAdapter();
-        mCardAdapter.addCardItem(new CardItem(R.string.title_1, R.string.text_1,R.mipmap.clipboard));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_2, R.string.text_1,R.mipmap.approve_tasks));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_3, R.string.text_1,R.mipmap.calendar));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_4, R.string.text_1,R.mipmap.fine));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_5, R.string.text_1,R.mipmap.overtime));
-
-        mFragmentCardAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(),
-                dpToPixels(2, this));
-
-        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
-        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
-
-        mViewPager.setAdapter(mCardAdapter);
-        mViewPager.setPageTransformer(false, mCardShadowTransformer);
-        mViewPager.setOffscreenPageLimit(3);
+//        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
+//        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+//
+//        mViewPager.setAdapter(mCardAdapter);
+//        mViewPager.setPageTransformer(false, mCardShadowTransformer);
+//        mViewPager.setOffscreenPageLimit(3);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -187,6 +183,30 @@ setupChartView();
         allAmounts.add(82.4);
         renderData(dates,allAmounts);
 
+    }
+
+    private void setuptCardRecyclerview() {
+        //All Gradients
+        GradientDrawable gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffd4cbe5, 0xffd4cbe5});
+        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
+        GradientDrawable gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
+        GradientDrawable gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
+
+
+        recyclerViewCard.setHasFixedSize(true);
+        recyclerViewCard.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<cardmodel> phonelocations = new ArrayList<>();
+        phonelocations.add(new cardmodel(R.mipmap.approve_tasks,"Today's Tasks","14"));
+        phonelocations.add(new cardmodel(R.mipmap.calendar,"Approve Tasks","16"));
+        phonelocations.add(new cardmodel(R.mipmap.clipboard,"Approve Leave","24"));
+        phonelocations.add(new cardmodel(R.mipmap.fine,"Fines","26"));
+        phonelocations.add(new cardmodel(R.mipmap.overtime,"OverTime","18"));
+
+
+
+        adapter = new adapteCard(phonelocations,this);
+        recyclerViewCard.setAdapter(adapter);
     }
 
     public void renderData(List<String> dates, List<Double> allAmounts) {
@@ -532,8 +552,10 @@ anyChartViewPieChart.setChart(pie);
         return newBitmap;
     }
 
+    @Override
+    public void onphoneListClick(int clickedItemIndex) {
 
-
+    }
 
 
     public class ClaimsXAxisValueFormatter extends ValueFormatter {

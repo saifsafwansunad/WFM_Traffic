@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E4E2"
     android:layout_marginTop="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
@@ -9,19 +10,32 @@
         android:layout_marginTop="15dp"
         android:orientation="vertical"
         android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
+            android:layout_margin="10dp"
+            android:text="Work Force Management"
+            android:textColor="@color/black"/>
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/viewPager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:clipToPadding="false"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:paddingEnd="@dimen/card_padding"-->
+<!--            android:paddingLeft="@dimen/card_padding"-->
+<!--            android:paddingRight="@dimen/card_padding"-->
+<!--            android:paddingStart="@dimen/card_padding" />-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/card_recycler"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="30dp"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingEnd="@dimen/card_padding"
-            android:paddingLeft="@dimen/card_padding"
-            android:paddingRight="@dimen/card_padding"
-            android:paddingStart="@dimen/card_padding" />
-
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -775,8 +789,6 @@
                     android:id="@+id/reportingChart"
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
-
-
                     android:layout_marginTop="8dp"
                     android:background="@color/white"
                     android:elevation="10dp"
