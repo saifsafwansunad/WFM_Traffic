@@ -42,15 +42,15 @@
 
     </LinearLayout>
 
-    <ImageView
-                                android:background="@color/white"
-                                android:layout_gravity="top"
-                                android:src="@drawable/closex"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:paddingRight="3dp"
-                                android:paddingTop="4dp"
-                                android:layout_alignParentRight="true"/>
+<!--    <ImageView-->
+<!--                                android:background="@color/white"-->
+<!--                                android:layout_gravity="top"-->
+<!--                                android:src="@drawable/closex"-->
+<!--                                android:layout_width="20dp"-->
+<!--                                android:layout_height="20dp"-->
+<!--                                android:paddingRight="3dp"-->
+<!--                                android:paddingTop="4dp"-->
+<!--                                android:layout_alignParentRight="true"/>-->
 </RelativeLayout>
 
 
