@@ -122,7 +122,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 //        }
 
         if(isExpanded){
-            ivArrow.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+            ivArrow.setImageResource(R.drawable.icon_down);
         }
         else {
             ivArrow.setImageResource(R.drawable.icon_right);
