@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2">
+            android:layout_weight="0.1">
 
             <ImageView
                 android:id="@+id/wfm_icon"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
 
                 android:src="@drawable/wfm_icon"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <ImageView
                 android:layout_marginLeft="10dp"
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:layout_weight="0.8"
+            android:layout_weight="0.9"
             android:orientation="horizontal">
 
             <TextView
@@ -52,10 +52,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/imgBackArrow"
-                android:text="WFM"
+                android:text="WFM-Work force management"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
                 android:visibility="visible"
                 />
 

@@ -289,7 +289,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
@@ -302,11 +302,13 @@
         <ExpandableListView
             android:id="@+id/expandableListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/nav_header_height"
             android:background="@android:color/white"
             android:dividerHeight="0dp"
-            android:groupIndicator="@null" />
+            android:divider="@null"
+            android:groupIndicator="@null"
+            android:backgroundTint="@color/light_violet"/>
     </com.google.android.material.navigation.NavigationView>
 
 

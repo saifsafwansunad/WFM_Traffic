@@ -43,6 +43,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
         final String childText = getChild(groupPosition, childPosition).menuName;
+        final int childIcon = getChild(groupPosition, childPosition).drawableId;
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this.context
@@ -52,8 +53,12 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         TextView txtListChild = convertView
                 .findViewById(R.id.tv_child_name);
+        ImageView txtListChildI = convertView
+                .findViewById(R.id.iv_icon1);
 
         txtListChild.setText(childText);
+        txtListChildI.setImageDrawable(context.getDrawable(childIcon));
+//        txtListChild.setCompoundDrawablesWithIntrinsicBounds(childIcon,0,0,0);
         return convertView;
     }
 
@@ -87,6 +92,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         String headerTitle = getGroup(groupPosition).menuName;
+        int headerIcon = getGroup(groupPosition).drawableId;
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -94,8 +100,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
 
         TextView lblListHeader = convertView.findViewById(R.id.tv_name);
+        ImageView ivIcon = convertView.findViewById(R.id.iv_icon);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
+        ivIcon.setImageDrawable(context.getDrawable(headerIcon));
+//        lblListHeader.setCompoundDrawablesWithIntrinsicBounds(headerIcon,0,0,0);
         ImageView ivArrow = (ImageView) convertView.findViewById(R.id.iv_arrow);
 
         // check if GroupView is expanded and set imageview for expand/collapse-action
@@ -116,7 +125,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             ivArrow.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
         }
         else {
-            ivArrow.setImageResource(R.drawable.ic_keyboard_arrow_right_black_18dp);
+            ivArrow.setImageResource(R.drawable.icon_right);
         }
 
         return convertView;

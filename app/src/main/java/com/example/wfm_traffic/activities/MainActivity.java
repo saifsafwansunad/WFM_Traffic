@@ -423,26 +423,26 @@ anyChartViewPieChart.setChart(pie);
 
     private void prepareMenuData() {
 
-        MenuModel menuModel = new MenuModel(R.drawable.dashboard,"Dashboard", true, false); //Menu of Android Tutorial. No sub menus
+        MenuModel menuModel = new MenuModel(R.drawable.icons8_home_50,"Dashboard", true, false); //Menu of Android Tutorial. No sub menus
         headerList.add(menuModel);
 
         if (!menuModel.hasChildren) {
             childList.put(menuModel, null);
         }
-        menuModel = new MenuModel(R.drawable.dashboard,"Task",true, true); //Menu of Java Tutorials
+        menuModel = new MenuModel(R.drawable.icons8_task_50,"Task",true, true); //Menu of Java Tutorials
         headerList.add(menuModel);
 
         List<MenuModel> childModelsList = new ArrayList<>();
-        MenuModel childModel = new MenuModel(R.drawable.calendar,"Calendar", false, false);
+        MenuModel childModel = new MenuModel(R.drawable.calendaer,"Calendar", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Assigned Tasks", false, false);
+        childModel = new MenuModel(R.drawable.assigned_task,"Assigned Tasks", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Approve Tasks", false, false);
+        childModel = new MenuModel(R.drawable.approve_task,"Approve Tasks", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Add Tasks", false, false);
+        childModel = new MenuModel(R.drawable.overtime2,"Add Tasks", false, false);
         childModelsList.add(childModel);
 
         childModel = new MenuModel(R.drawable.calendar,"Time Sheet", false, false);
@@ -457,51 +457,51 @@ anyChartViewPieChart.setChart(pie);
         }
 
         childModelsList = new ArrayList<>();
-        menuModel = new MenuModel(R.drawable.dashboard,"Fines",true, true); //Menu of Java Tutorials
+        menuModel = new MenuModel(R.drawable.icons8_banknotes_32,"Fines",true, true); //Menu of Java Tutorials
         headerList.add(menuModel);
-        childModel = new MenuModel(R.drawable.calendar,"Calendar", false, false);
+        childModel = new MenuModel(R.drawable.calendaer,"Calendar", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Add Fines", false, false);
+        childModel = new MenuModel(R.drawable.icons8_banknotes_32,"Add Fines", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Fines", false, false);
+        childModel = new MenuModel(R.drawable.clock,"Fines", false, false);
         childModelsList.add(childModel);
 
         if (menuModel.hasChildren) {
             childList.put(menuModel, childModelsList);
         }
         childModelsList = new ArrayList<>();
-        menuModel = new MenuModel(R.drawable.dashboard,"Leaves",true, true); //Menu of Java Tutorials
+        menuModel = new MenuModel(R.drawable.icons8_leave_48,"Leaves",true, true); //Menu of Java Tutorials
         headerList.add(menuModel);
-        childModel = new MenuModel(R.drawable.calendar,"Calendar", false, false);
+        childModel = new MenuModel(R.drawable.calendaer,"Calendar", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Request Leave", false, false);
+        childModel = new MenuModel(R.drawable.overtime,"Request Leave", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Leave Detail", false, false);
+        childModel = new MenuModel(R.drawable.assigned_task,"Leave Detail", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Approve Leave", false, false);
+        childModel = new MenuModel(R.drawable.approve_task,"Approve Leave", false, false);
         childModelsList.add(childModel);
 
         if (menuModel.hasChildren) {
             childList.put(menuModel, childModelsList);
         }
-        menuModel = new MenuModel(R.drawable.dashboard,"Overtime",true, true); //Menu of Java Tutorials
+        menuModel = new MenuModel(R.drawable.icons8_overtime_64,"Overtime",true, true); //Menu of Java Tutorials
         headerList.add(menuModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Calendar", false, false);
+        childModel = new MenuModel(R.drawable.calendaer,"Calendar", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Overtimes", false, false);
+        childModel = new MenuModel(R.drawable.overtime,"Overtimes", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Overtimes List", false, false);
+        childModel = new MenuModel(R.drawable.overtime1,"Overtimes List", false, false);
         childModelsList.add(childModel);
 
-        childModel = new MenuModel(R.drawable.calendar,"Overtimes Approval", false, false);
+        childModel = new MenuModel(R.drawable.overtime2,"Overtimes Approval", false, false);
         childModelsList.add(childModel);
 
         if (menuModel.hasChildren) {
