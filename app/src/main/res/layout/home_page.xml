@@ -37,17 +37,11 @@
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="325dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            >
+            android:orientation="vertical">
 
             <!--
             In the above cardview widget
@@ -63,39 +57,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:layout_weight="2"
-                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+
+                android:background="@drawable/linearlayout_bg"
+                android:orientation="horizontal"
                 >
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:tag="image_tag"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_margin="5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/approve_tasks"
-                    android:background="@drawable/circular"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView"-->
+<!--                    android:tag="image_tag"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="45dp"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:src="@mipmap/approve_tasks"-->
+<!--                    android:background="@drawable/circular"/>-->
 
                 <TextView
                     android:id="@+id/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:text="Weekly Tasks"
-                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+       />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textViewVersion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
+                    android:gravity="end"
                     android:textStyle="bold"
-                    android:text="26"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:layout_alignParentRight="true"
+                    android:text="24"
+                    android:textColor="@color/white"
+                   />
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -105,7 +107,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
                 android:layoutDirection="ltr"
                 android:text="@string/app_name"
@@ -120,7 +121,7 @@
 
 
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -377,14 +378,31 @@
 
 
         </androidx.cardview.widget.CardView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_margin="10dp"
-            android:text="TASKS/WEEKLY"
-            android:textColor="@color/black"/>
+
+
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/imageView"-->
+            <!--                    android:tag="image_tag"-->
+            <!--                    android:layout_width="45dp"-->
+            <!--                    android:layout_height="45dp"-->
+            <!--                    android:layout_margin="5dp"-->
+            <!--                    android:layout_gravity="center_horizontal"-->
+            <!--                    android:src="@mipmap/approve_tasks"-->
+            <!--                    android:background="@drawable/circular"/>-->
+
+            <TextView
+                android:id="@+id/textViewPieChartName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+android:layout_margin="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Tasks/Weekly"
+                />
+
+
         <com.anychart.AnyChartView
             android:layout_width="300dp"
             android:padding="10dp"
@@ -392,13 +410,14 @@
             android:layout_height="300dp"
             android:id="@+id/piechart"/>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
-            android:text="LEAVES SHEET"
+            android:textSize="18dp"
+            android:text="Leaves Sheet"
             android:textColor="@color/black"/>
 
         <TableLayout
@@ -408,13 +427,14 @@
             android:paddingRight="10dp">
 
             <TableRow
-                android:background="#0079D6"
+                android:background="#0000cd"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Leaves Name" />
 
@@ -422,6 +442,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
+
                     android:textStyle="bold"
                     android:text="No. of Leaves" />
 
@@ -430,17 +452,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
+
                     android:text="Used Leaves" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_weight="1"
                     android:textStyle="bold"
                     android:text="Balance Leaves" />
             </TableRow>
 
             <TableRow
-                android:background="#DAE8FC"
+                android:background="#F0F0F0"
                 android:padding="5dp">
 
                 <TextView
@@ -468,7 +493,7 @@
             </TableRow>
 
             <TableRow
-                android:background="#DAE8FC"
+                android:background="#ffffff"
                 android:padding="5dp">
 
                 <TextView
@@ -496,7 +521,7 @@
             </TableRow>
 
             <TableRow
-                android:background="#DAE8FC"
+                android:background="#F0F0F0"
                 android:padding="5dp">
 
                 <TextView
@@ -523,7 +548,7 @@
                     android:text="8" />
             </TableRow>
             <TableRow
-                android:background="#DAE8FC"
+                android:background="#ffffff"
                 android:padding="5dp">
 
                 <TextView
@@ -550,7 +575,7 @@
                     android:text="8" />
             </TableRow>
             <TableRow
-                android:background="#DAE8FC"
+                android:background="#F0F0F0"
                 android:padding="5dp">
 
                 <TextView
@@ -582,7 +607,6 @@
             android:layout_height="wrap_content"
             app:cardElevation="10dp"
             app:cardCornerRadius="20dp"
-            android:layout_margin="10dp"
             app:cardBackgroundColor="@color/white"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"

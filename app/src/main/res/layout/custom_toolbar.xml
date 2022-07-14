@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/imgBackArrow"
-                android:text="WFM-Work force management"
+                android:text="Dashboard"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="15dp"
