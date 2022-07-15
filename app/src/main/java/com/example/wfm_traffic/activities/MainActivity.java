@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
@@ -50,6 +52,7 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.Utils;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -64,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
 
     ImageView drawer_left;
     private DrawerLayout drawer;
+    TabLayout tabLayoutMessages;
+    ViewPager viewPagerMessages;
     LinearLayout firstDrawer;
     RelativeLayout emlm;
     ListView secondDrawer;
@@ -182,6 +187,90 @@ setuptCardRecyclerview();
         allAmounts.add(68.7);
         allAmounts.add(82.4);
         renderData(dates,allAmounts);
+
+        tabLayoutMessages = (TabLayout) findViewById(R.id.messages_tablayout);
+        TextView fine_last_month  = findViewById(R.id.fine_last_month);
+        TextView fine_yesterday  = findViewById(R.id.fine_yesterday);
+        TextView fine_today  = findViewById(R.id.fine_today);
+//        viewPagerMessages = (ViewPager) findViewById(R.id.messages_viewPager);
+
+        tabLayoutMessages.addTab(tabLayoutMessages.newTab().setText("Arrests"));
+        tabLayoutMessages.addTab(tabLayoutMessages.newTab().setText("Discontinue Notice"));
+        tabLayoutMessages.addTab(tabLayoutMessages.newTab().setText("D/Licence"));
+
+        tabLayoutMessages.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        tabLayoutMessages.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+//                viewPagerMessages.setCurrentItem(tab.getPosition());
+                switch (tab.getPosition()) {
+                    case 0:
+                            fine_last_month.setText("R 7,561.00");
+                            fine_yesterday.setText("R 7,561.00");
+                            fine_today.setText("R 7,561.00");
+                        List<String> dates = new ArrayList<>();
+                        dates.add("2022-04-14");
+                        dates.add("2022-04-21");
+                        dates.add("2022-04-28");
+                        dates.add("2022-04-25");
+                        List<Double> allAmounts = new ArrayList<>();
+                        allAmounts.add(42.1);
+                        allAmounts.add(59.3);
+                        allAmounts.add(68.7);
+                        allAmounts.add(82.4);
+                        renderData(dates,allAmounts);
+                            break;
+
+                    case 1:
+                        fine_last_month.setText("R 60,908");
+                        fine_yesterday.setText("R 07,908");
+                        fine_today.setText("R 50,908");
+                        List<String> dates1 = new ArrayList<>();
+                        dates1.add("2022-04-14");
+                        dates1.add("2022-04-21");
+                        dates1.add("2022-04-28");
+                        dates1.add("2022-04-25");
+                        List<Double> allAmounts1 = new ArrayList<>();
+                        allAmounts1.add(59.1);
+                        allAmounts1.add(49.3);
+                        allAmounts1.add(78.7);
+                        allAmounts1.add(62.4);
+                        renderData(dates1,allAmounts1);
+                        break;
+
+                    case 2:
+                        fine_last_month.setText("R 990,908");
+                        fine_yesterday.setText("R 97,908");
+                        fine_today.setText("R 30,908");
+                        List<String> dates2 = new ArrayList<>();
+                        dates2.add("2022-04-14");
+                        dates2.add("2022-04-21");
+                        dates2.add("2022-04-28");
+                        dates2.add("2022-04-25");
+                        List<Double> allAmounts2 = new ArrayList<>();
+                        allAmounts2.add(78.1);
+                        allAmounts2.add(59.3);
+                        allAmounts2.add(68.7);
+                        allAmounts2.add(42.4);
+                        renderData(dates2,allAmounts2);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 
