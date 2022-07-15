@@ -220,6 +220,8 @@ setuptCardRecyclerview();
                         allAmounts.add(68.7);
                         allAmounts.add(82.4);
                         renderData(dates,allAmounts);
+                        volumeReportChart.notifyDataSetChanged();
+                        volumeReportChart.invalidate();
                             break;
 
                     case 1:
@@ -237,6 +239,8 @@ setuptCardRecyclerview();
                         allAmounts1.add(78.7);
                         allAmounts1.add(62.4);
                         renderData(dates1,allAmounts1);
+                        volumeReportChart.notifyDataSetChanged();
+                        volumeReportChart.invalidate();
                         break;
 
                     case 2:
@@ -254,6 +258,8 @@ setuptCardRecyclerview();
                         allAmounts2.add(68.7);
                         allAmounts2.add(42.4);
                         renderData(dates2,allAmounts2);
+                        volumeReportChart.notifyDataSetChanged();
+                        volumeReportChart.invalidate();
                         break;
 
                     default:
