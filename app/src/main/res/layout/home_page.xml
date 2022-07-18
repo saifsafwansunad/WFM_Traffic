@@ -101,23 +101,12 @@
 
             </LinearLayout>
 
-            <com.example.mystairberrychartkt.view.LineChartView
-                android:id="@+id/linearChartViewOralHygiene"
-                style="@style/OralHygieneChart"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/f_container"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="0dp"
-                android:layoutDirection="ltr"
-                android:text="@string/app_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:chart_grid="vertical"
-                app:chart_gridEffect="dashed"
-                app:chart_gridStrokeWidth="1dp"
-                app:chart_labelsSize="8sp"
-                app:chart_labelsXColor="@color/orange500"
-                app:chart_labelsYColor="@color/linkWithoutButton" />
+                android:layout_height="300dp"
+                android:name="com.example.wfm_traffic.fragments.ChartFragment"/>
+
 
 
         </LinearLayout>
@@ -183,24 +172,11 @@
 
             </LinearLayout>
 
-            <com.example.mystairberrychartkt.view.LineChartView
-                android:id="@+id/linearChartViewOralHygiene1"
-                style="@style/OralHygieneChart"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/f_container1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="0dp"
-                android:layoutDirection="ltr"
-                android:text="@string/app_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:chart_grid="vertical"
-                app:chart_gridEffect="dashed"
-                app:chart_gridStrokeWidth="1dp"
-                app:chart_labelsSize="8sp"
-                app:chart_labelsXColor="@color/orange500"
-                app:chart_labelsYColor="@color/linkWithoutButton" />
+                android:layout_height="300dp"
+                android:name="com.example.wfm_traffic.fragments.ChartFragment1"/>
 
 
         </LinearLayout>
@@ -266,24 +242,11 @@
 
             </LinearLayout>
 
-            <com.example.mystairberrychartkt.view.LineChartView
-                android:id="@+id/linearChartViewOralHygiene2"
-                style="@style/OralHygieneChart"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/f_container2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="0dp"
-                android:layoutDirection="ltr"
-                android:text="@string/app_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:chart_grid="vertical"
-                app:chart_gridEffect="dashed"
-                app:chart_gridStrokeWidth="1dp"
-                app:chart_labelsSize="8sp"
-                app:chart_labelsXColor="@color/orange500"
-                app:chart_labelsYColor="@color/linkWithoutButton" />
+                android:layout_height="300dp"
+                android:name="com.example.wfm_traffic.fragments.ChartFragment2"/>
 
 
         </LinearLayout>
@@ -349,24 +312,11 @@
 
             </LinearLayout>
 
-            <com.example.mystairberrychartkt.view.LineChartView
-                android:id="@+id/linearChartViewOralHygiene3"
-                style="@style/OralHygieneChart"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/f_container3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="0dp"
-                android:layoutDirection="ltr"
-                android:text="@string/app_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:chart_grid="vertical"
-                app:chart_gridEffect="dashed"
-                app:chart_gridStrokeWidth="1dp"
-                app:chart_labelsSize="8sp"
-                app:chart_labelsXColor="@color/orange500"
-                app:chart_labelsYColor="@color/linkWithoutButton" />
+                android:layout_height="300dp"
+                android:name="com.example.wfm_traffic.fragments.ChartFragment3"/>
 
 
         </LinearLayout>

@@ -305,7 +305,7 @@ fun ArrayList<LineChartValue>.convertToLinearChartData(): ArrayList<Triple<Drawa
         data.add(
             Triple(
                 null,
-                value.date.toLong().getMonthAndDay()!!,
+                value.date.toString(),
                 if (score == 0) 0f else score.toFloat()
             )
         )
