@@ -85,7 +85,7 @@ public class ChartFragment3 extends Fragment {
         Cartesian areaChart = AnyChart.area();
 
         areaChart.animation(true);
-        areaChart.background("#E5E4E2");
+//        areaChart.background("#E5E4E2");
         areaChart.yAxis(false);
         areaChart.xAxis(false);
 

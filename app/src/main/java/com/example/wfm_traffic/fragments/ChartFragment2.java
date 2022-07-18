@@ -95,7 +95,7 @@ public class ChartFragment2 extends Fragment {
         crosshair.yLabel(0).enabled(true);
 
         areaChart.yScale().stackMode(ScaleStackMode.VALUE);
-        areaChart.background("#E5E4E2");
+//        areaChart.background("#E5E4E2");
         areaChart.yAxis(false);
         areaChart.xAxis(false);
 

@@ -61,7 +61,6 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/linearlayout_bg"
-
                 android:orientation="horizontal"
                 android:padding="10dp">
 
@@ -104,7 +103,9 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/f_container"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="330dp"
+                android:layout_marginRight="10dp"
+
                 android:name="com.example.wfm_traffic.fragments.ChartFragment"/>
 
 
@@ -175,7 +176,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/f_container1"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="330dp"
+                android:layout_marginRight="10dp"
                 android:name="com.example.wfm_traffic.fragments.ChartFragment1"/>
 
 
@@ -245,7 +247,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/f_container2"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="330dp"
+                android:layout_marginRight="10dp"
                 android:name="com.example.wfm_traffic.fragments.ChartFragment2"/>
 
 
@@ -315,7 +318,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/f_container3"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="330dp"
+                android:layout_marginRight="10dp"
                 android:name="com.example.wfm_traffic.fragments.ChartFragment3"/>
 
 
@@ -342,11 +346,11 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
-
         <com.anychart.AnyChartView
             android:id="@+id/piechart"
             android:layout_width="300dp"
             android:layout_height="300dp"
+            android:background="#E5E4E2"
             android:layout_gravity="center_horizontal"
             android:padding="10dp" />
 
@@ -555,7 +559,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="STATISTICS TOP FINES"
+            android:layout_marginTop="5dp"
+            android:text="Statistics Top Fines"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />

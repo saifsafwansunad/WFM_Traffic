@@ -95,15 +95,15 @@ public class ChartFragment1 extends Fragment {
         crosshair.yLabel(0).enabled(true);
 
         areaChart.yScale().stackMode(ScaleStackMode.VALUE);
-        areaChart.background("#E5E4E2");
+//        areaChart.background("#E5E4E2");
         areaChart.yAxis(false);
         areaChart.xAxis(false);
 
 //        areaChart.title("Unaudited Apple Inc. Revenue by Operating Segments");
 
         List<DataEntry> seriesData = new ArrayList<>();
-        seriesData.add(new CustomDataEntry("Q2 2014", 17.982, 10.941, 9.835, 4.047, 2.841));
-        seriesData.add(new CustomDataEntry("Q3 2014", 17.574, 8.659, 6.230, 2.627, 2.242));
+        seriesData.add(new CustomDataEntry("Q2 2014", 14.982, 15.941, 19.835, 42.047, 27.841));
+        seriesData.add(new CustomDataEntry("Q3 2014", 7.574, 8.659, 16.230, 22.627, 16.242));
         seriesData.add(new CustomDataEntry("Q4 2014", 19.75, 10.35, 6.292, 3.595, 2.136));
         seriesData.add(new CustomDataEntry("Q1 2015", 30.6, 17.2, 16.1, 5.4, 5.2));
         seriesData.add(new CustomDataEntry("Q2 2015", 21.316, 12.204, 16.823, 3.457, 4.210));

@@ -563,6 +563,8 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
     private void setupChartView() {
 Pie pie= AnyChart.pie();
        pie.legend(false);
+       pie.background("#E5E4E2");
+
 
 List<DataEntry> datEntries=new ArrayList();
 for (int i=0;i<strAr.length;i++){
@@ -705,6 +707,7 @@ anyChartViewPieChart.setChart(pie);
         if (menuModel.hasChildren) {
             childList.put(menuModel, childModelsList);
         }
+        childModelsList = new ArrayList<>();
         menuModel = new MenuModel(R.drawable.icons8_overtime_64,"Overtime",true, true); //Menu of Java Tutorials
         headerList.add(menuModel);
 
