@@ -197,16 +197,16 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
 //
 //            }
 //        });
-        monthCalendar = findViewById(R.id.month_calendar);
+//        monthCalendar = findViewById(R.id.month_calendar);
         weekCalendar = findViewById(R.id.week_calendar);
 
-        monthCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MonthCalendarActivity1.class);
-                startActivity(intent);
-            }
-        });
+//        monthCalendar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MonthCalendarActivity1.class);
+//                startActivity(intent);
+//            }
+//        });
 
         weekCalendar.setOnClickListener(new View.OnClickListener() {
             @Override

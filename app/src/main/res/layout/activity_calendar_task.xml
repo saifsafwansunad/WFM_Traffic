@@ -288,48 +288,48 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:layout_margin="10dp"
-                android:padding="10dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/white"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:padding="10dp">-->
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:padding="5dp"
-                    android:src="@drawable/organi_calendar"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Month Calendar"
-                    android:textSize="16dp"
+<!--                <ImageView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:padding="5dp"-->
+<!--                    android:src="@drawable/organi_calendar"-->
+<!--                    android:layout_gravity="center"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Month Calendar"-->
+<!--                    android:textSize="16dp"-->
 
-                    android:padding="5dp"/>
+<!--                    android:padding="5dp"/>-->
 
-                <RelativeLayout
-                    android:id="@+id/month_calendar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="10dp"
-                    tools:ignore="DuplicateIds">
-                    <ImageView
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/month_calendar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:padding="10dp"-->
+<!--                    tools:ignore="DuplicateIds">-->
+<!--                    <ImageView-->
 
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/forward_arrow"
-                        android:layout_alignParentRight="true"
-                        android:layout_gravity="center"/>
-                </RelativeLayout>
-
-
+<!--                        android:layout_width="10dp"-->
+<!--                        android:layout_height="10dp"-->
+<!--                        android:src="@drawable/forward_arrow"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_gravity="center"/>-->
+<!--                </RelativeLayout>-->
 
 
-            </LinearLayout>
+
+
+<!--            </LinearLayout>-->
 
             <View
                 android:layout_width="match_parent"
@@ -344,6 +344,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:padding="10dp">
 
                 <ImageView
@@ -355,7 +356,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Your Calendar"
+                    android:text="Week Calendar"
                     android:textSize="16dp"
 
                     android:padding="5dp"/>
