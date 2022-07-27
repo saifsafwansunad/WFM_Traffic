@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -637,6 +638,29 @@ anyChartViewPieChart.setChart(pie);
     private void populateExpandableList() {
         expandableListAdapter = new ExpandableListAdapter(this, headerList, childList);
         expandableListView.setAdapter(expandableListAdapter);
+
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                return false;
+            }
+        });
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
+
+                if (groupPosition == 1) {
+                    if (childPosition == 0) {
+                        Intent intent = new Intent(MainActivity.this, CalendarTaskActivity.class);
+                        startActivity(intent);
+                    }
+                }
+
+
+                return false;
+            }
+        });
     }
 
     private void prepareMenuData() {

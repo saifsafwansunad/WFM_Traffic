@@ -99,6 +99,7 @@ public class ChartFragment3 extends Fragment {
 
 
         areaChart.yScale().stackMode(ScaleStackMode.VALUE);
+        areaChart.a11y(false);
 
 //        areaChart.title("Unaudited Apple Inc. Revenue by Operating Segments");
 

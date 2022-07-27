@@ -27,6 +27,7 @@
     <color name="strokeColorFocused">#015DAB</color>
     <color name="editTextTextColor">#757575</color>
     <color name="editTextEyeColor">#8D8D8D</color>
+    <color name="gray">#dcdcdc</color>
 
     Main Colors
     <color name="primary">#5DC2B9</color>
