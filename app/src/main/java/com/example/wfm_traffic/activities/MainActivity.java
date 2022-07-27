@@ -564,7 +564,7 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
     private void setupChartView() {
 Pie pie= AnyChart.pie();
        pie.legend(false);
-       pie.background("#E5E4E2");
+       pie.background("#7A5299");
 
 
 List<DataEntry> datEntries=new ArrayList();

@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MyActivity" >
     <item android:id="@+id/action_today"
-        android:title="today"
+        android:title="Today"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"/>
     <group android:checkableBehavior="single">
         <item android:id="@+id/action_day_view"
-            android:title="dayWiew"
+            android:title="Day View"
             android:orderInCategory="100"
             app:showAsAction="ifRoom"/>
         <item android:id="@+id/action_three_day_view"
-            android:title="action_three_day_view"
+            android:title="Three Days View"
             android:orderInCategory="100"
             app:showAsAction="ifRoom"
             android:checked="true"/>
         <item android:id="@+id/action_week_view"
-            android:title="action_week_view"
+            android:title="Week View"
             android:orderInCategory="100"
             app:showAsAction="ifRoom"/>
     </group>
