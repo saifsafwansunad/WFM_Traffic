@@ -1,6 +1,7 @@
 package com.example.wfm_traffic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
@@ -43,6 +44,8 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
     GridView gridview;
     CalendarAdapter ca;
     RelativeLayout monthCalendar,weekCalendar;
+    AppCompatButton  Button,button1,button2,button3;
+    View view4,view1,view2,view3;
 
     TabLayout tabLayoutMeetings;
     private ViewPager mViewPager,viewPagerMeeting;
@@ -215,6 +218,69 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
                 startActivity(intent);
             }
         });
+
+        Button = findViewById(R.id.rect);
+        view4 = findViewById(R.id.view2);
+        button1 = findViewById(R.id.rect1);
+        view1 = findViewById(R.id.view1);
+        button2 = findViewById(R.id.rect2);
+        view2 = findViewById(R.id.view3);
+        button3 = findViewById(R.id.rect3);
+        view3 = findViewById(R.id.view4);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                Button.setBackground(getDrawable(R.drawable.rect1));
+                Button.setTextColor(Color.parseColor("#FFFFFF"));
+                view4.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button1.setBackground(getDrawable(R.drawable.rect1));
+                button1.setTextColor(Color.parseColor("#FFFFFF"));
+                view1.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button2.setBackground(getDrawable(R.drawable.rect1));
+                button2.setTextColor(Color.parseColor("#FFFFFF"));
+                view2.setVisibility(View.VISIBLE);
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button3.setBackground(getDrawable(R.drawable.rect1));
+                button3.setTextColor(Color.parseColor("#FFFFFF"));
+                view3.setVisibility(View.VISIBLE);
+            }
+        });
+
+    }
+
+    public void  intButton(){
+        Button.setBackground(getDrawable(R.drawable.rect));
+        button1.setBackground(getDrawable(R.drawable.rect));
+        button2.setBackground(getDrawable(R.drawable.rect));
+        button3.setBackground(getDrawable(R.drawable.rect));
+        Button.setTextColor(Color.parseColor("#7A5299"));
+        button1.setTextColor(Color.parseColor("#7A5299"));
+        button2.setTextColor(Color.parseColor("#7A5299"));
+        button3.setTextColor(Color.parseColor("#7A5299"));
+        view4.setVisibility(View.INVISIBLE);
+        view1.setVisibility(View.INVISIBLE);
+        view2.setVisibility(View.INVISIBLE);
+        view3.setVisibility(View.INVISIBLE);
     }
 
     private void createCalendar(int year, int month) {
