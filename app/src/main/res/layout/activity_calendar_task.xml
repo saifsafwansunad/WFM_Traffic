@@ -130,6 +130,15 @@
 
                 </LinearLayout>
             </LinearLayout>
+            <com.example.wfm_traffic.week2.WeekView
+                android:layout_below="@+id/weekView3"
+                android:visibility="gone"
+                android:id="@+id/weekView" android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:autoLimitTime="false" app:dayBackgroundColor="#05000000" app:headerColumnTextColor="@color/toolbar_text"
+                app:headerRowBackgroundColor="@color/toolbar" app:maxTime="24" app:minOverlappingMinutes="5" app:minTime="0"
+                app:newEventTimeResolutionInMinutes="15" app:noOfVisibleDays="7" app:timeColumnResolution="60"
+                app:todayColumnBackgroundColor="#1848adff" app:todayHeaderTextColor="@color/accent"
+                app:untitledEventText="@string/untitled_event"/>
 
 
 
