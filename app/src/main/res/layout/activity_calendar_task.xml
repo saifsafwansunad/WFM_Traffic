@@ -12,7 +12,7 @@
 <!--    <androidx.core.widget.NestedScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:fillViewport="true">-->
+<!--     >-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:padding="3dp"
                 android:paddingTop="10dp"
-                android:background="@color/white"
+                android:background="#E5E4E2"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:gravity="center"
@@ -104,31 +104,31 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
-                        android:layout_width="100dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/rect"
-                        android:textColor="@color/light_violet"
-                        android:text="List"
-                        android:id="@+id/rect3"/>
-                    <View
-                        android:id="@+id/view4"
-                        android:visibility="invisible"
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="5dp"
-                        android:background="@color/light_violet"/>
+<!--                <LinearLayout-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:layout_marginRight="5dp"-->
+<!--                        android:background="@drawable/rect"-->
+<!--                        android:textColor="@color/light_violet"-->
+<!--                        android:text="List"-->
+<!--                        android:id="@+id/rect3"/>-->
+<!--                    <View-->
+<!--                        android:id="@+id/view4"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="5dp"-->
+<!--                        android:background="@color/light_violet"/>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
             </LinearLayout>
             <com.example.wfm_traffic.week2.WeekView
                 android:layout_below="@+id/weekView3"
@@ -465,6 +465,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:background="@color/purple_500"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

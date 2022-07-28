@@ -56,10 +56,10 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
     GridView gridview;
     CalendarAdapter ca;
     RelativeLayout monthCalendar,weekCalendar;
-    AppCompatButton  Button,button1,button2,button3;
+    AppCompatButton  Button,button1,button2;
     LinearLayout calendar_spinneer;
     CardView cardView;
-    View view4,view1,view2,view3;
+    View view4,view1,view2;
     private static final int TYPE_DAY_VIEW = 1;
     private static final int TYPE_THREE_DAY_VIEW = 2;
     private static final int TYPE_WEEK_VIEW = 3;
@@ -246,8 +246,8 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
         view1 = findViewById(R.id.view1);
         button2 = findViewById(R.id.rect2);
         view2 = findViewById(R.id.view3);
-        button3 = findViewById(R.id.rect3);
-        view3 = findViewById(R.id.view4);
+//        button3 = findViewById(R.id.rect3);
+//        view3 = findViewById(R.id.view4);
         calendar_spinneer = findViewById(R.id.calender_spinner);
         cardView = findViewById(R.id.calendar_card);
         Button.setOnClickListener(new View.OnClickListener() {
@@ -310,15 +310,15 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
                 }
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intButton();
-                button3.setBackground(getDrawable(R.drawable.rect1));
-                button3.setTextColor(Color.parseColor("#FFFFFF"));
-                view3.setVisibility(View.VISIBLE);
-            }
-        });
+//        button3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                intButton();
+//                button3.setBackground(getDrawable(R.drawable.rect1));
+//                button3.setTextColor(Color.parseColor("#FFFFFF"));
+//                view3.setVisibility(View.VISIBLE);
+//            }
+//        });
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);
@@ -498,15 +498,15 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
         Button.setBackground(getDrawable(R.drawable.rect));
         button1.setBackground(getDrawable(R.drawable.rect));
         button2.setBackground(getDrawable(R.drawable.rect));
-        button3.setBackground(getDrawable(R.drawable.rect));
+//        button3.setBackground(getDrawable(R.drawable.rect));
         Button.setTextColor(Color.parseColor("#7A5299"));
         button1.setTextColor(Color.parseColor("#7A5299"));
         button2.setTextColor(Color.parseColor("#7A5299"));
-        button3.setTextColor(Color.parseColor("#7A5299"));
+//        button3.setTextColor(Color.parseColor("#7A5299"));
         view4.setVisibility(View.INVISIBLE);
         view1.setVisibility(View.INVISIBLE);
         view2.setVisibility(View.INVISIBLE);
-        view3.setVisibility(View.INVISIBLE);
+//        view3.setVisibility(View.INVISIBLE);
     }
 
     private void createCalendar(int year, int month) {
