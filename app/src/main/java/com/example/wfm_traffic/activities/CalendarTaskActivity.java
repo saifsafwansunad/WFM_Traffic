@@ -1,14 +1,18 @@
 package com.example.wfm_traffic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,22 +21,31 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wfm_traffic.R;
 import com.example.wfm_traffic.adapter.CalendarViewpagerAdap;
 import com.example.wfm_traffic.model.CalenderObj;
+import com.example.wfm_traffic.week2.DateTimeInterpreter;
+import com.example.wfm_traffic.week2.MonthLoader;
+import com.example.wfm_traffic.week2.WeekView;
+import com.example.wfm_traffic.week2.WeekViewEvent;
 import com.google.android.material.tabs.TabLayout;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 
-public class CalendarTaskActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class CalendarTaskActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener{
 
     List<CalenderObj> daysListEvent = new ArrayList<>();
     List<CalenderObj> daysListEventAll = new ArrayList<>();
@@ -43,6 +56,17 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
     GridView gridview;
     CalendarAdapter ca;
     RelativeLayout monthCalendar,weekCalendar;
+    AppCompatButton  Button,button1,button2,button3;
+    LinearLayout calendar_spinneer;
+    CardView cardView;
+    View view4,view1,view2,view3;
+    private static final int TYPE_DAY_VIEW = 1;
+    private static final int TYPE_THREE_DAY_VIEW = 2;
+    private static final int TYPE_WEEK_VIEW = 3;
+    private int mWeekViewType = TYPE_THREE_DAY_VIEW;
+    private WeekView mWeekView;
+    ImageView dots,backarrow;
+    TextView title;
 
     TabLayout tabLayoutMeetings;
     private ViewPager mViewPager,viewPagerMeeting;
@@ -215,6 +239,274 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
                 startActivity(intent);
             }
         });
+
+        Button = findViewById(R.id.rect);
+        view4 = findViewById(R.id.view2);
+        button1 = findViewById(R.id.rect1);
+        view1 = findViewById(R.id.view1);
+        button2 = findViewById(R.id.rect2);
+        view2 = findViewById(R.id.view3);
+        button3 = findViewById(R.id.rect3);
+        view3 = findViewById(R.id.view4);
+        calendar_spinneer = findViewById(R.id.calender_spinner);
+        cardView = findViewById(R.id.calendar_card);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                Button.setBackground(getDrawable(R.drawable.rect1));
+                Button.setTextColor(Color.parseColor("#FFFFFF"));
+                view4.setVisibility(View.VISIBLE);
+                mWeekView.setVisibility(View.GONE);
+                calendar_spinneer.setVisibility(View.VISIBLE);
+                cardView.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button1.setBackground(getDrawable(R.drawable.rect1));
+                button1.setTextColor(Color.parseColor("#FFFFFF"));
+                view1.setVisibility(View.VISIBLE);
+                mWeekView.setVisibility(View.VISIBLE);
+                calendar_spinneer.setVisibility(View.GONE);
+                cardView.setVisibility(View.GONE);
+                if (mWeekViewType != TYPE_WEEK_VIEW) {
+                    setupDateTimeInterpreter(true);
+                    mWeekViewType = TYPE_WEEK_VIEW;
+                    mWeekView.setNumberOfVisibleDays(7);
+
+                    // Lets change some dimensions to best fit the view.
+                    mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics()));
+                    mWeekView.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));
+                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));
+                }
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button2.setBackground(getDrawable(R.drawable.rect1));
+                button2.setTextColor(Color.parseColor("#FFFFFF"));
+                view2.setVisibility(View.VISIBLE);
+                mWeekView.setVisibility(View.VISIBLE);
+                calendar_spinneer.setVisibility(View.GONE);
+                cardView.setVisibility(View.GONE);
+
+                if (mWeekViewType != TYPE_DAY_VIEW) {
+                    setupDateTimeInterpreter(false);
+                    mWeekViewType = TYPE_DAY_VIEW;
+                    mWeekView.setNumberOfVisibleDays(1);
+
+                    // Lets change some dimensions to best fit the view.
+                    mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics()));
+                    mWeekView.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
+                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
+                }
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intButton();
+                button3.setBackground(getDrawable(R.drawable.rect1));
+                button3.setTextColor(Color.parseColor("#FFFFFF"));
+                view3.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // Get a reference for the week view in the layout.
+        mWeekView = (WeekView) findViewById(R.id.weekView);
+
+        // Show a toast message about the touched event.
+        mWeekView.setEventClickListener(this);
+
+        // The week view has infinite scrolling horizontally. We have to provide the events of a
+        // month every time the month changes on the week view.
+        mWeekView.setMonthChangeListener(this);
+
+        // Set long press listener for events.
+        mWeekView.setEventLongPressListener(this);
+
+        // Set long press listener for empty view
+        mWeekView.setEmptyViewLongPressListener(this);
+
+        // Set up a date time interpreter to interpret how the date and time will be formatted in
+        // the week view. This is optional.
+        setupDateTimeInterpreter(false);
+
+    }
+
+    private void setupDateTimeInterpreter(final boolean shortDate) {
+        mWeekView.setDateTimeInterpreter(new DateTimeInterpreter() {
+            @Override
+            public String getFormattedWeekDayTitle(Calendar date) {
+                SimpleDateFormat weekdayNameFormat = new SimpleDateFormat("E", Locale.getDefault());
+                String weekday = weekdayNameFormat.format(date.getTime());
+                SimpleDateFormat format = new SimpleDateFormat(" M/d", Locale.getDefault());
+
+                // All android api level do not have a standard way of getting the first letter of
+                // the week day name. Hence we get the first char programmatically.
+                // Details: http://stackoverflow.com/questions/16959502/get-one-letter-abbreviation-of-week-day-of-a-date-in-java#answer-16959657
+                if (shortDate)
+                    weekday = String.valueOf(weekday.charAt(0));
+                return weekday.toUpperCase() + format.format(date.getTime());
+            }
+
+            @Override
+            public String getFormattedTimeOfDay(int hour, int miniute) {
+                return hour > 11 ? (hour - 12) + " PM" : (hour == 0 ? "12 AM" : hour + " AM");
+            }
+        });
+    }
+
+    protected String getEventTitle(Calendar time) {
+        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
+    }
+
+    @Override
+    public void onEventClick(WeekViewEvent event, RectF eventRect) {
+        Toast.makeText(this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onEventLongPress(WeekViewEvent event, RectF eventRect) {
+        Toast.makeText(this, "Long pressed event: " + event.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onEmptyViewLongPress(Calendar time) {
+        Toast.makeText(this, "Empty view long pressed: " + getEventTitle(time), Toast.LENGTH_SHORT).show();
+    }
+
+    public WeekView getWeekView() {
+        return mWeekView;
+    }
+
+    @Override
+    public List<? extends WeekViewEvent> onMonthChange(int newYear, int newMonth) {
+        // Populate the week view with some events.
+        List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
+
+        Calendar startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, 3);
+        startTime.set(Calendar.MINUTE, 0);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        Calendar endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR, 1);
+        endTime.set(Calendar.MONTH, newMonth-1);
+        WeekViewEvent event = new WeekViewEvent("1", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.material_on_primary_emphasis_high_type));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, 3);
+        startTime.set(Calendar.MINUTE, 30);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.set(Calendar.HOUR_OF_DAY, 4);
+        endTime.set(Calendar.MINUTE, 30);
+        endTime.set(Calendar.MONTH, newMonth-1);
+        event = new WeekViewEvent("10", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.secondary200));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, 4);
+        startTime.set(Calendar.MINUTE, 20);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.set(Calendar.HOUR_OF_DAY, 5);
+        endTime.set(Calendar.MINUTE, 0);
+        event = new WeekViewEvent("10", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.teal_700));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, 5);
+        startTime.set(Calendar.MINUTE, 30);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR_OF_DAY, 2);
+        endTime.set(Calendar.MONTH, newMonth-1);
+        event = new WeekViewEvent("2", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.teal_200));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, 5);
+        startTime.set(Calendar.MINUTE, 0);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        startTime.add(Calendar.DATE, 1);
+        endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR_OF_DAY, 3);
+        endTime.set(Calendar.MONTH, newMonth - 1);
+        event = new WeekViewEvent("3", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.teal_700));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.DAY_OF_MONTH, 15);
+        startTime.set(Calendar.HOUR_OF_DAY, 3);
+        startTime.set(Calendar.MINUTE, 0);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR_OF_DAY, 3);
+        event = new WeekViewEvent("4", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.teal_200));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.DAY_OF_MONTH, 1);
+        startTime.set(Calendar.HOUR_OF_DAY, 3);
+        startTime.set(Calendar.MINUTE, 0);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR_OF_DAY, 3);
+        event = new WeekViewEvent("5", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.teal_700));
+        events.add(event);
+
+        startTime = Calendar.getInstance();
+        startTime.set(Calendar.DAY_OF_MONTH, startTime.getActualMaximum(Calendar.DAY_OF_MONTH));
+        startTime.set(Calendar.HOUR_OF_DAY, 15);
+        startTime.set(Calendar.MINUTE, 0);
+        startTime.set(Calendar.MONTH, newMonth-1);
+        startTime.set(Calendar.YEAR, newYear);
+        endTime = (Calendar) startTime.clone();
+        endTime.add(Calendar.HOUR_OF_DAY, 3);
+        event = new WeekViewEvent("5", getEventTitle(startTime), startTime, endTime);
+        event.setColor(getResources().getColor(R.color.editTextEyeColor));
+        events.add(event);
+
+        return events;
+    }
+
+    public void  intButton(){
+        Button.setBackground(getDrawable(R.drawable.rect));
+        button1.setBackground(getDrawable(R.drawable.rect));
+        button2.setBackground(getDrawable(R.drawable.rect));
+        button3.setBackground(getDrawable(R.drawable.rect));
+        Button.setTextColor(Color.parseColor("#7A5299"));
+        button1.setTextColor(Color.parseColor("#7A5299"));
+        button2.setTextColor(Color.parseColor("#7A5299"));
+        button3.setTextColor(Color.parseColor("#7A5299"));
+        view4.setVisibility(View.INVISIBLE);
+        view1.setVisibility(View.INVISIBLE);
+        view2.setVisibility(View.INVISIBLE);
+        view3.setVisibility(View.INVISIBLE);
     }
 
     private void createCalendar(int year, int month) {

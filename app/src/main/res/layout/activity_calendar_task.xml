@@ -9,16 +9,141 @@
     tools:context=".activities.CalendarTaskActivity">
 
     <include layout="@layout/custom_toolbar2"/>
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fillViewport="true">-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:weightSum="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/rect1"
+                        android:textColor="@color/white"
+                        android:text="Month"
+                        android:id="@+id/rect"/>
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/light_violet"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/rect"
+                        android:textColor="@color/light_violet"
+                        android:text="WEEK"
+                        android:id="@+id/rect1"/>
+                    <View
+                        android:id="@id/view1"
+                        android:visibility="invisible"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/light_violet"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/rect"
+                        android:textColor="@color/light_violet"
+                        android:text="Day"
+                        android:id="@+id/rect2"/>
+                    <View
+                        android:id="@+id/view3"
+                        android:visibility="invisible"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/light_violet"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/rect"
+                        android:textColor="@color/light_violet"
+                        android:text="List"
+                        android:id="@+id/rect3"/>
+                    <View
+                        android:id="@+id/view4"
+                        android:visibility="invisible"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/light_violet"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <com.example.wfm_traffic.week2.WeekView
+                android:layout_below="@+id/weekView3"
+                android:visibility="gone"
+                android:id="@+id/weekView" android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:autoLimitTime="false" app:dayBackgroundColor="#05000000" app:headerColumnTextColor="@color/toolbar_text"
+                app:headerRowBackgroundColor="@color/toolbar" app:maxTime="24" app:minOverlappingMinutes="5" app:minTime="0"
+                app:newEventTimeResolutionInMinutes="15" app:noOfVisibleDays="7" app:timeColumnResolution="60"
+                app:todayColumnBackgroundColor="#1848adff" app:todayHeaderTextColor="@color/accent"
+                app:untitledEventText="@string/untitled_event"/>
+
+
 
             <LinearLayout
+                android:id="@+id/calender_spinner"
                 android:weightSum="2"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
@@ -50,7 +175,7 @@
             <!--            </androidx.cardview.widget.CardView>-->
 
             <androidx.cardview.widget.CardView
-
+                android:id="@+id/calendar_card"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
@@ -389,7 +514,7 @@ android:textColor="@color/white"
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+<!--    </androidx.core.widget.NestedScrollView>-->
 
 
 
