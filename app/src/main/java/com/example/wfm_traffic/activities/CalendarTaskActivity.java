@@ -79,6 +79,17 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_task);
 
+        title=findViewById(R.id.title);
+        title.setText("Task Calendar");
+        ImageView backarrow=findViewById(R.id.imgBackArrow);
+
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
         daysListEventAll.add(new CalenderObj(1, "2020", "October", "f"));
         daysListEventAll.add(new CalenderObj(2, "2020", "October", "h"));
