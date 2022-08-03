@@ -50,8 +50,6 @@ public class AssignedTaskActivity extends AppCompatActivity {
                 intButton();
                 Button.setBackground(getDrawable(R.drawable.rect1));
                 Button.setTextColor(Color.parseColor("#FFFFFF"));
-
-
             }
         });
 

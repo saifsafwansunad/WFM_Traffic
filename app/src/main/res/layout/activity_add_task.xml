@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E5E4E2"
+    tools:context=".activities.AddTaskActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Title :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_border"
+            android:hint="Enter the Task title"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Category :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/edit_text_border" >
+        <android.widget.Spinner
+            android:id="@+id/taskcategory_spinner"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+
+            />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assigned To :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/edit_text_border" >
+            <android.widget.Spinner
+                android:id="@+id/assigned_to_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/edit_text_border" >
+            <android.widget.Spinner
+                android:id="@+id/status_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%Completed :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_border"
+            android:hint="0%"
+            android:padding="10dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/edit_text_border" >
+            <android.widget.Spinner
+                android:id="@+id/priority_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+android:id="@+id/date_layout"
+            android:background="@drawable/edit_text_border" >
+            <TextView
+                android:id="@+id/date_textview"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="mm/dd/yyyy"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From Time :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/from_time_relativelayout"
+            android:onClick="popTimePicker"
+
+            android:background="@drawable/edit_text_border" >
+            <TextView
+                android:id="@+id/from_time_textview"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="--:-- --"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_access_time_24"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Time :"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/to_time_relativelayout"
+android:onClick="popTimePicker"
+            android:background="@drawable/edit_text_border" >
+            <TextView
+                android:id="@+id/to_time_textview"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="--:-- --"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_access_time_24"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple_500"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/clear_btn"
+                android:text="Clear"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple_500"
+                android:layout_height="wrap_content" />
+</LinearLayout>
+        </RelativeLayout>
+
+
+</LinearLayout>
+</ScrollView>
+</LinearLayout>
