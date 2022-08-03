@@ -659,6 +659,10 @@ anyChartViewPieChart.setChart(pie);
                         Intent intent = new Intent(MainActivity.this, AssignedTaskActivity.class);
                         startActivity(intent);
                     }
+                    else if (childPosition == 2) {
+                        Intent intent = new Intent(MainActivity.this, ApproveTaskActivity.class);
+                        startActivity(intent);
+                    }
                 }
 
 

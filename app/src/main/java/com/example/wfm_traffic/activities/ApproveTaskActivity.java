@@ -2,16 +2,13 @@ package com.example.wfm_traffic.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.wfm_traffic.R;
@@ -20,24 +17,23 @@ import com.example.wfm_traffic.model.TaskModel;
 
 import java.util.ArrayList;
 
-public class AssignedTaskActivity extends AppCompatActivity {
+public class ApproveTaskActivity extends AppCompatActivity {
 
     AppCompatButton Button,button1,button2,button3,button4;
     RecyclerView assigned_task_rv;
-    ArrayList<TaskModel>taskModels;
+    ArrayList<TaskModel> taskModels;
     TextView title;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assigned_task);
+        setContentView(R.layout.activity_approve_task);
+
 
         addition();
 
         title=findViewById(R.id.title);
-        title.setText("Assigned Tasks");
+        title.setText("Approve Tasks");
         ImageView backarrow=findViewById(R.id.imgBackArrow);
 
         backarrow.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +101,6 @@ public class AssignedTaskActivity extends AppCompatActivity {
                 button4.setTextColor(Color.parseColor("#FFFFFF"));
             }
         });
-
     }
 
     public void  intButton(){

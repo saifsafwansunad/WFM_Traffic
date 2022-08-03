@@ -75,25 +75,25 @@
 
         </LinearLayout>
 
-                        <LinearLayout
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-                            <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
-                                android:layout_width="100dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginRight="5dp"
-                                android:background="@drawable/rect"
-                                android:textColor="@color/light_violet"
-                                android:text="PDF"
-                                android:id="@+id/rect3"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rect"
+                android:textColor="@color/light_violet"
+                android:text="PDF"
+                android:id="@+id/rect3"/>
 
 
-                        </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:gravity="center"
             android:layout_gravity="center"
