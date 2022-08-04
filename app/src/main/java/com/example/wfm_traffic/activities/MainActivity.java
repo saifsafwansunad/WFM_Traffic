@@ -664,6 +664,12 @@ anyChartViewPieChart.setChart(pie);
                         startActivity(intent);
                     }
                 }
+                else if (groupPosition==2){
+                    if (childPosition==1){
+                        Intent intent = new Intent(MainActivity.this, AddFinesActivity.class);
+                        startActivity(intent);
+                    }
+                }
 
 
                 return false;

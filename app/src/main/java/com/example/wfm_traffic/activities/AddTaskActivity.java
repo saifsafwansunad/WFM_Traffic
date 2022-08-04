@@ -214,9 +214,6 @@ RelativeLayout relativeLayoutFromTime;
     public void popTimePicker(View view)
     {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener()
-
-
-
         {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
