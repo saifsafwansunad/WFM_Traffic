@@ -675,6 +675,34 @@ anyChartViewPieChart.setChart(pie);
                         Intent intent = new Intent(MainActivity.this, AddFinesActivity.class);
                         startActivity(intent);
                     }
+                    if (childPosition==0){
+                        Intent intent = new Intent(MainActivity.this, FinesCalendarActivity.class);
+                        startActivity(intent);
+                    }
+                    if (childPosition==2){
+                        Intent intent = new Intent(MainActivity.this, FinesActivity.class);
+                        startActivity(intent);
+                    }
+                }else if(groupPosition ==3){
+
+                    if (childPosition==0){
+                        Intent intent = new Intent(MainActivity.this, LeaveCalendarActivity.class);
+                        startActivity(intent);
+                    }
+                    if (childPosition==3){
+                        Intent intent = new Intent(MainActivity.this, ApproveLeaveActivity.class);
+                        startActivity(intent);
+                    }
+
+                }else if (groupPosition == 4){
+                    if (childPosition==0){
+                        Intent intent = new Intent(MainActivity.this, OvertimeCalendarActivity.class);
+                        startActivity(intent);
+                    }
+                    if (childPosition==2){
+                        Intent intent = new Intent(MainActivity.this, OvertimeListActivity.class);
+                        startActivity(intent);
+                    }
                 }
 
 
