@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/action_unread"
+        android:title="Mark as Unread"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_baseline_mail_outline_24"/>
+    <item android:id="@+id/action_edit"
+        android:title="Save as Draft"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:checked="true"/>
+    <item android:id="@+id/action_delete"
+        android:title="Delete"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+</menu>
