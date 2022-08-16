@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".activities.MessagesActivity"></activity>
         <activity android:name=".activities.RequestLeaveActivity" />
-        <activity android:name=".activities.OvertimeListActivity"></activity>
+        <activity android:name=".activities.LeaveDetailActivity"></activity>
+        <activity android:name=".activities.OvertimeApprovalActivity" />
+        <activity android:name=".activities.OvertimeListActivity" />
         <activity android:name=".activities.OvertimeCalendarActivity" />
         <activity android:name=".activities.ApproveLeaveActivity" />
         <activity android:name=".activities.LeaveCalendarActivity" />

@@ -693,6 +693,10 @@ anyChartViewPieChart.setChart(pie);
                         Intent intent = new Intent(MainActivity.this, ApproveLeaveActivity.class);
                         startActivity(intent);
                     }
+                    if (childPosition==2){
+                        Intent intent = new Intent(MainActivity.this, LeaveDetailActivity.class);
+                        startActivity(intent);
+                    }
 
                 }else if (groupPosition == 4){
                     if (childPosition==0){
@@ -701,6 +705,10 @@ anyChartViewPieChart.setChart(pie);
                     }
                     if (childPosition==2){
                         Intent intent = new Intent(MainActivity.this, OvertimeListActivity.class);
+                        startActivity(intent);
+                    }
+                    if (childPosition==3){
+                        Intent intent = new Intent(MainActivity.this, OvertimeApprovalActivity.class);
                         startActivity(intent);
                     }
                 }
