@@ -51,9 +51,10 @@ public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView id,task,cate,assigned,date,from,to;
+        public TextView title,id,task,cate,assigned,date,from,to;
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
+            title = itemView.findViewById(R.id.leave_detail_title_tv);
             id = itemView.findViewById(R.id.textView2);
             task = itemView.findViewById(R.id.textView4);
             cate = itemView.findViewById(R.id.textView6);

@@ -352,7 +352,7 @@ public class AddFinesActivity extends AppCompatActivity {
 
         // int style = AlertDialog.THEME_HOLO_DARK;
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this,  R.style.DialogTheme,/*style,*/ onTimeSetListener, hour, minute, true);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,  R.style.MaterialCalendarTheme,/*style,*/ onTimeSetListener, hour, minute, true);
 
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();

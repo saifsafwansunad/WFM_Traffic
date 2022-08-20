@@ -11,11 +11,20 @@
 
 
     </style>
+    <style name="MaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.TimePicker">
 
+        <!-- Buttons -->
+        <item name="buttonBarPositiveButtonStyle">@style/TextButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/TextButton</item>
+    </style>
+    <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="backgroundTint">@color/purple_200</item>
+    </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:textColor">@color/purple_200</item>
-        <item name="colorAccent">@color/purple_200</item>
+        <item name="colorOnPrimary">@color/purple_200</item>
     </style>
 
     <style name="TextViewSecondaryLightCaption.Small" parent="TextAppearance.CaptionSmall">

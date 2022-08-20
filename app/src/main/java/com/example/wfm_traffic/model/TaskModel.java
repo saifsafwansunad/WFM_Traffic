@@ -1,6 +1,8 @@
 package com.example.wfm_traffic.model;
 
 public class TaskModel {
+    private String task;
+
     private int taskId;
     private String taskTitle;
     private String taskCategory;

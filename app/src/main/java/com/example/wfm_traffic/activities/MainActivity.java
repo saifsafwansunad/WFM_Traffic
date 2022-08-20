@@ -689,6 +689,10 @@ anyChartViewPieChart.setChart(pie);
                         Intent intent = new Intent(MainActivity.this, LeaveCalendarActivity.class);
                         startActivity(intent);
                     }
+                    if (childPosition==1){
+                        Intent intent = new Intent(MainActivity.this, RequestLeaveActivity.class);
+                        startActivity(intent);
+                    }
                     if (childPosition==3){
                         Intent intent = new Intent(MainActivity.this, ApproveLeaveActivity.class);
                         startActivity(intent);
@@ -701,6 +705,11 @@ anyChartViewPieChart.setChart(pie);
                 }else if (groupPosition == 4){
                     if (childPosition==0){
                         Intent intent = new Intent(MainActivity.this, OvertimeCalendarActivity.class);
+                        startActivity(intent);
+                    }
+
+                    if (childPosition==1){
+                        Intent intent = new Intent(MainActivity.this, OvertimesActivity.class);
                         startActivity(intent);
                     }
                     if (childPosition==2){
