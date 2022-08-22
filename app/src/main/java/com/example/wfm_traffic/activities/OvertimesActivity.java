@@ -30,7 +30,7 @@ public class OvertimesActivity extends AppCompatActivity {
     int hour, minute;
 Spinner spinnerDayofweek;
     String[] dayofweeek = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-
+TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,8 @@ Spinner spinnerDayofweek;
         RelativeLayout relativeLayoutDate=findViewById(R.id.date_layout);
         textViewFromTime=findViewById(R.id.from_time_textview);
         textViewToTime=findViewById(R.id.to_time_textview);
-
+        title=findViewById(R.id.title);
+        title.setText("Overtimes");
         textViewDate=findViewById(R.id.date_textview);
 
         ArrayAdapter ad

@@ -7,6 +7,8 @@
     android:background="#E5E4E2"
     android:orientation="vertical"
     tools:context=".activities.RequestLeaveActivity">
+    <include layout="@layout/custom_toolbar2"/>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -139,7 +141,7 @@
                     android:hint="Choose File to Upload"
                     android:padding="10dp" />
 
-                <Button
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

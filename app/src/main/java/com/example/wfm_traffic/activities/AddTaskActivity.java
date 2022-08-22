@@ -42,6 +42,7 @@ public class AddTaskActivity extends AppCompatActivity  {
     TextView textViewDate,textViewFromTime,textViewToTime;
     int hour, minute;
 RelativeLayout relativeLayoutFromTime;
+TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,8 @@ RelativeLayout relativeLayoutFromTime;
         relativeLayoutFromTime=findViewById(R.id.from_time_relativelayout);
         textViewFromTime=findViewById(R.id.from_time_textview);
         textViewToTime=findViewById(R.id.to_time_textview);
-
+        title=findViewById(R.id.title);
+        title.setText("Add Task");
         textViewDate=findViewById(R.id.date_textview);
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override

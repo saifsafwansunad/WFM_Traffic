@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E5E4E2">
+    android:background="#E5E4E2"
+    >
 
     <include layout="@layout/custom_toolbar2"/>
 

@@ -7,6 +7,7 @@
     android:background="#E5E4E2"
     android:orientation="vertical"
     tools:context=".activities.OvertimesActivity">
+    <include layout="@layout/custom_toolbar2"/>
 
     <ScrollView
         android:layout_width="match_parent"

@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -50,7 +52,7 @@ public class AddFinesActivity extends AppCompatActivity {
             "Others"};
     int hour, minute;
     final Calendar myCalendar= Calendar.getInstance();
-    TextView textViewDate;
+    TextView textViewDate,title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +68,17 @@ public class AddFinesActivity extends AppCompatActivity {
         spinnerfinecaegory=findViewById(R.id.fine_caegory_spinner);
         spinnerPaymenttype=findViewById(R.id.payment_type_spinner);
         RelativeLayout relativeLayoutDate=findViewById(R.id.date_layout);
-
+        title=findViewById(R.id.title);
+        title.setText("Add Task");
         textViewDate=findViewById(R.id.date_textview);
-
+        ImageView imageViewNotification=findViewById(R.id.notification);
+//        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override
