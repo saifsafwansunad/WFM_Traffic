@@ -101,9 +101,6 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
             imageViewMsgProfile=itemView.findViewById(R.id.msg_imgview);
             imageViewMenu=itemView.findViewById(R.id.messages_munu);
 
-
-
-
         }
     }
 }

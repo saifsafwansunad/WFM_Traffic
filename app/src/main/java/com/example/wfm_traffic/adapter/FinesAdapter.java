@@ -42,7 +42,7 @@ public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) 
         holder.assigned.setText(tsk.get(position).getTaskAssignedTo());
         holder.date.setText(tsk.get(position).getTaskDate());
         holder.from.setText(tsk.get(position).getTaskFrom());
-        holder.to.setText(tsk.get(position).getTaskTo());
+//        holder.to.setText(tsk.get(position).getTaskTo());
         }
 
 @Override
@@ -60,7 +60,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         assigned = itemView.findViewById(R.id.textView8);
         date = itemView.findViewById(R.id.textView10);
         from = itemView.findViewById(R.id.textView12);
-        to = itemView.findViewById(R.id.textView14);
+//        to = itemView.findViewById(R.id.textView14);
 
     }
 }

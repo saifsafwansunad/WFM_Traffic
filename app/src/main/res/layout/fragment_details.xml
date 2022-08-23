@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="ID  "
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="#1"
+                    android:textColor="@color/black"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Task Title "
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Patrol Duty"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Task Category "
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Category One"
+                    android:textColor="@color/black"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Assigned To"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Ari Satou"
+                    android:textColor="@color/black"
+                    />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Status "
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="In Progress"
+
+                    android:textColor="#4169E1"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="%Completed "
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="60%"
+                    android:textColor="@color/black"
+                    />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Priority"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="2 Normal"
+                    android:textColor="@color/green700"
+                    />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="2011/04/25"
+                    android:textColor="@color/black"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="From Time"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="11:00"
+                    android:textColor="@color/black"
+                    />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp"
+                >
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="To Time"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    />
+
+            </TableRow>
+
+
+
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Traffic jam is the situation when vehicles are stopped completely for some time period on the roads"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <TableRow android:layout_marginTop="5dp">
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Attachment"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+
+                android:text="http://wfm-traffic.demo4uonline.com/attachments/Traffic-admin-system-output-reports.pdf"
+                android:textColor="@color/black"
+                />
+
+        </TableRow>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

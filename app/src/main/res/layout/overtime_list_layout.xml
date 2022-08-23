@@ -10,7 +10,7 @@
     card_view:contentPadding="7dp"
     android:padding="10dp"
     android:layout_margin="7dp"
-    card_view:cardBackgroundColor="@color/light_violet"
+
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,169 +20,375 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <TableRow>
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="O.T.ID : "
-                    android:textColor="#ffff"
-                    />
+            <TableRow android:layout_width="match_parent">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="ID Show Here"
-                    android:textColor="#ffff"
-                    />
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:padding="5dp"
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="O.T.ID  "
+
+                            android:textColor="@color/black"
+
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:background="@drawable/table_lines"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text=" ID Show Here"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
             </TableRow>
 
-            <TableRow>
+            <TableRow android:layout_width="match_parent">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Day of the week : "
-                    android:textColor="#ffff"
-                    />
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"                    android:padding="5dp"
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Name Show Here"
-                    android:textColor="#ffff"/>
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:text="Day of the Week"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text=" Name Show Here"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
             </TableRow>
 
-            <TableRow>
+            <TableRow
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Date : "
-                    android:textColor="#ffff"
-                    />
+                android:layout_width="match_parent">
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Phone Number Show"
-                    android:textColor="#ffff"
-                    />
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Date  "
+                            android:textColor="@color/black"
+
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text=" Phone Number Show"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
             </TableRow>
 
-            <TableRow>
+            <TableRow
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="From Time : "
-                    android:textColor="#ffff"
-                    />
+                android:layout_width="match_parent">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Subject Show Here"
-                    android:textColor="#ffff"
-                    />
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="From Time  "
+
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text=" Subject Show Here"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="To Time  "
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Subject Show Here"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Number of Hours"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"                    android:padding="5dp"
+
+                        android:background="@drawable/table_lines"
+                        >
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Subject Show Here"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
 
             </TableRow>
 
-            <TableRow>
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="To Time : "
-                    android:textColor="#ffff"
-                    android:textSize="20dp" />
+<!--            <TableRow-->
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Subject Show Here"
-                    android:textColor="#ffff"
-                    />
+<!--                android:layout_width="match_parent">-->
 
-            </TableRow>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="2">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1.5"                    android:padding="5dp"-->
 
-            <TableRow>
+<!--                        android:background="@drawable/table_lines"-->
+<!--                        >-->
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView13"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Number Of Hours : "
-                    android:textColor="#ffff"
-                    />
+<!--                            android:text="To Time "-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
+<!--                            android:textStyle="bold"-->
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Subject Show Here"
-                    android:textColor="#ffff"
-                    />
+<!--                            />-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"                    android:padding="5dp"-->
 
-            </TableRow>
+<!--                        android:background="@drawable/table_lines"-->
+<!--                        >-->
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView14"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="2"-->
+<!--                            android:text=" Subject Show Here"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
 
-
+<!--                            />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--            </TableRow>-->
 
         </TableLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true">
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true">
 
-                <TextView
+                <Button
                     android:id="@+id/viewDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/list_bg_white"
-                    android:backgroundTint="@color/light_violet"
+                    android:backgroundTint="#17A2B8"
 
                     android:inputType="textCapSentences"
-                    android:paddingLeft="25dp"
-                    android:text="Details"
+                    android:text="Get Details"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
+
 
                     />
 
-                <ImageView
-                    android:id="@+id/details_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+<!--                <ImageView-->
+<!--                    android:id="@+id/details_icon"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="20dp"-->
 
-                    android:src="@drawable/ic_baseline_arrow_forward_24" />
+<!--                    android:src="@drawable/ic_baseline_arrow_forward_24" />-->
             </LinearLayout>
         </RelativeLayout>
 

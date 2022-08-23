@@ -1,14 +1,26 @@
 package com.example.wfm_traffic.activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,10 +31,20 @@ import com.example.wfm_traffic.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
-public class AddTaskActivity extends AppCompatActivity  {
+import pub.devrel.easypermissions.EasyPermissions;
 
+import static com.example.wfm_traffic.activities.RequestLeaveActivity.PICKFILE_RESULT_CODE;
+
+public class AddTaskActivity extends AppCompatActivity  implements EasyPermissions.PermissionCallbacks {
+
+
+    public static final int PICKFILE_RESULT_CODE = 1;
+    ActivityResultLauncher<Intent> resultLauncher;
+    private Uri fileUri;
+    private String filePath;
 
     String[] taskcategory = {"Task Category 1", "Task Category 2",
             "Task Category 3", "Task Category 4",
@@ -41,7 +63,13 @@ public class AddTaskActivity extends AppCompatActivity  {
     final Calendar myCalendar= Calendar.getInstance();
     TextView textViewDate,textViewFromTime,textViewToTime;
     int hour, minute;
-RelativeLayout relativeLayoutFromTime;
+    EditText editTextUpoad;
+    ImageView imageViewUpload;
+    RelativeLayout relativeLayoutFromDate,relativeLayouTodate;
+    TextView textViewFromDate,textViewToDate;
+
+
+    RelativeLayout relativeLayoutFromTime;
 TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,34 +80,55 @@ TextView title;
         Spinner spinnerAssgine = findViewById(R.id.assigned_to_spinner);
         Spinner spinnerstatus = findViewById(R.id.status_spinner);
         Spinner spinnerpriority = findViewById(R.id.priority_spinner);
-        RelativeLayout relativeLayoutDate=findViewById(R.id.date_layout);
-        relativeLayoutFromTime=findViewById(R.id.from_time_relativelayout);
-        textViewFromTime=findViewById(R.id.from_time_textview);
-        textViewToTime=findViewById(R.id.to_time_textview);
-        title=findViewById(R.id.title);
+        relativeLayoutFromDate=findViewById(R.id.fromdate_layout);
+        relativeLayouTodate=findViewById(R.id.to_date_layout);
+        textViewToDate=findViewById(R.id.to_date_textview);
+        textViewFromDate=findViewById(R.id.fromdate_textview);
+
+        imageViewUpload = findViewById(R.id.upload_imgview);
+        editTextUpoad = findViewById(R.id.upload_edittext);
+
+        textViewFromTime = findViewById(R.id.from_time_textview);
+        textViewToTime = findViewById(R.id.to_time_textview);
+        title = findViewById(R.id.title);
         title.setText("Add Task");
-        textViewDate=findViewById(R.id.date_textview);
+        textViewDate = findViewById(R.id.date_textview);
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH,month);
                 myCalendar.set(Calendar.DAY_OF_MONTH,day);
-                updateLabel();
+                updateLabelFromDate();
+            }
+
+        };
+        DatePickerDialog.OnDateSetListener dateTo =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabelToDate();
             }
 
         };
 
-        relativeLayoutDate.setOnClickListener(new View.OnClickListener() {
+        relativeLayoutFromDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(AddTaskActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
             }
         });
 
+        relativeLayouTodate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(AddTaskActivity.this,dateTo,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
-
-
+            }
+        });
 
         // Create the instance of ArrayAdapter
         // having the list of courses
@@ -106,7 +155,6 @@ TextView title;
         ad2.setDropDownViewResource(
                 android.R.layout
                         .simple_spinner_dropdown_item);
-
 
 
         ArrayAdapter ad3
@@ -189,6 +237,60 @@ TextView title;
 
             }
         });
+
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts
+                        .StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(
+                            ActivityResult result) {
+                        // Initialize result data
+                        Intent data = result.getData();
+                        // check condition
+                        if (data != null) {
+                            // When data is not equal to empty
+                            // Get PDf uri
+                            Uri sUri = data.getData();
+                            // set Uri on text view
+//                            tvUri.setText(Html.fromHtml(
+//                                    "<big><b>PDF Uri</b></big><br>"
+//                                            + sUri));
+
+                            // Get PDF path
+                            String sPath = sUri.getPath();
+                            // Set path on text view
+                            editTextUpoad.setHint(Html.fromHtml(
+                                    "<b>File Path</b><br>"
+                                            + sPath));
+                        }
+                    }
+                });
+
+        imageViewUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ActivityCompat.checkSelfPermission(
+                        AddTaskActivity.this,
+                        Manifest.permission
+                                .READ_EXTERNAL_STORAGE)
+                        != PackageManager
+                        .PERMISSION_GRANTED) {
+                    // When permission is not granted
+                    // Result permission
+                    ActivityCompat.requestPermissions(
+                            AddTaskActivity.this,
+                            new String[]{
+                                    Manifest.permission
+                                            .READ_EXTERNAL_STORAGE},
+                            1);
+                } else {
+                    // When permission is granted
+                    // Create method
+                    selectPDF();
+                }
+            }
+        });
     }
 
     private void updateLabel(){
@@ -224,6 +326,28 @@ TextView title;
                 hour = selectedHour;
                 minute = selectedMinute;
                 textViewFromTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+//                textViewToTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+            }
+        };
+
+        // int style = AlertDialog.THEME_HOLO_DARK;
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,  R.style.MaterialCalendarTheme,/*style,*/ onTimeSetListener, hour, minute, true);
+
+        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.show();
+    }
+
+    public void popTimePickerTo(View view)
+    {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener()
+        {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
+            {
+                hour = selectedHour;
+                minute = selectedMinute;
+//                textViewFromTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
                 textViewToTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
             }
         };
@@ -235,4 +359,59 @@ TextView title;
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case PICKFILE_RESULT_CODE:
+                if (resultCode == -1) {
+                    fileUri = data.getData();
+                    filePath = fileUri.getPath();
+//                    tvItemPath.setText(filePath);
+                }
+
+                break;
+        }
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        selectPDF();
+
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Toast
+                .makeText(getApplicationContext(),
+                        "Permission Denied",
+                        Toast.LENGTH_SHORT)
+                .show();
+    }
+
+    private void selectPDF()
+    {
+        // Initialize intent
+        Intent intent
+                = new Intent(Intent.ACTION_GET_CONTENT);
+        // set type
+        intent.setType("*/*");
+        // Launch intent
+        resultLauncher.launch(intent);
+    }
+
+
+    private void updateLabelFromDate(){
+        String myFormat="MM/dd/yy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+        textViewFromDate.setText(dateFormat.format(myCalendar.getTime()));
+    }
+    private void updateLabelToDate(){
+        String myFormat="MM/dd/yy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+        textViewToDate.setText(dateFormat.format(myCalendar.getTime()));
+    }
+
 }

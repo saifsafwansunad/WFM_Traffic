@@ -17,6 +17,31 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="DAILY FINES - TRAFFIC SECTION"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="#E5E4E2"
+app:strokeWidth="1dp"
+            app:strokeColor="@color/purple_500"
+            android:background="@color/cardview_light_background"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -138,7 +163,25 @@
             android:background="@drawable/edit_text_border"
             android:hint="Ener ZipCode"
             android:padding="10dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#E5E4E2"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_500"
+        android:background="@color/cardview_light_background"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -232,8 +275,25 @@
                 android:padding="10dp"
                 />
         </RelativeLayout>
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#E5E4E2"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_500"
+        android:background="@color/cardview_light_background"
 
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -286,8 +346,25 @@
                 />
         </RelativeLayout>
 
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#E5E4E2"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_500"
+        android:background="@color/cardview_light_background"
 
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -408,8 +485,13 @@
                 android:layout_centerVertical="true"/>
 
         </RelativeLayout>
-
-
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -425,11 +507,12 @@
             android:hint="Comments"
             android:padding="10dp" />
 
-
+</LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -29,7 +29,7 @@ public class OvertimesActivity extends AppCompatActivity {
     TextView textViewDate,textViewFromTime,textViewToTime;
     int hour, minute;
 Spinner spinnerDayofweek;
-    String[] dayofweeek = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+    String[] dayofweeek = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +107,28 @@ TextView title;
                 hour = selectedHour;
                 minute = selectedMinute;
                 textViewFromTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+//                textViewToTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+            }
+        };
+
+        // int style = AlertDialog.THEME_HOLO_DARK;
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,  R.style.MaterialCalendarTheme,/*style,*/ onTimeSetListener, hour, minute, true);
+//        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.show();
+
+    }
+
+    public void popTimePickerTo(View view)
+    {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener()
+        {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
+            {
+                hour = selectedHour;
+                minute = selectedMinute;
+//                textViewFromTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
                 textViewToTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
             }
         };

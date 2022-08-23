@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wfm_traffic.R;
+import com.example.wfm_traffic.model.LeaveDetailsModel;
 import com.example.wfm_traffic.model.TaskModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,10 +18,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.ViewHolder> {
-    private ArrayList<TaskModel> tsk;
+    private ArrayList<LeaveDetailsModel> tsk;
     private Context context;
 
-    public LeaveDetailAdapter(ArrayList<TaskModel> tsk, Context context) {
+    public LeaveDetailAdapter(ArrayList<LeaveDetailsModel> tsk, Context context) {
         this.tsk = tsk;
         this.context = context;
     }
@@ -42,6 +43,8 @@ public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.
         holder.assigned.setText(tsk.get(position).getTaskAssignedTo());
         holder.date.setText(tsk.get(position).getTaskDate());
         holder.from.setText(tsk.get(position).getTaskFrom());
+        holder.title.setText(tsk.get(position).getTaskTitle());
+
 //        holder.to.setText(tsk.get(position).getTaskTo());
     }
 
