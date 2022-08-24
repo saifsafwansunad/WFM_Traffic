@@ -7,9 +7,9 @@
     tools:context=".activities.DetailsActivity">
 
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tasks Details"
+                android:text="Leave Request Detail"
                 android:textSize="22dp"
                 android:layout_margin="15dp"/>
 
@@ -52,10 +52,11 @@
                     <TextView
                         android:padding="5dp"
                         android:id="@+id/textView2"
+                        android:layout_marginLeft="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
-                        android:text="#1"
+                        android:text="#98651"
                         android:textColor="@color/black"
                         />
                 </TableRow>
@@ -69,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"                        android:textStyle="bold"
 
-                        android:text="Task Title "
+                        android:text="Leave Category"
                         android:textColor="@color/black"
                         />
 
@@ -78,8 +79,9 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="Patrol Duty"
+                        android:textSize="20dp"                        android:layout_marginLeft="5dp"
+
+                        android:text="Casual Leave(CL)"
                         android:textColor="@color/black"/>
                 </TableRow>
 
@@ -92,7 +94,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"                        android:textStyle="bold"
 
-                        android:text="Task Category "
+                        android:text="Rquest Date "
                         android:textColor="@color/black"
                         />
 
@@ -101,8 +103,9 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="Category One"
+                        android:textSize="20dp"                        android:layout_marginLeft="5dp"
+
+                        android:text="03/11/2017"
                         android:textColor="@color/black"
                         />
                 </TableRow>
@@ -116,19 +119,19 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"                        android:textStyle="bold"
 
-                        android:text="Assigned To: "
+                        android:text="From Date"
                         android:textColor="@color/black"
                         />
 
                     <TextView
-                        android:padding="5dp"
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="Ari Satou"
+                        android:padding="5dp"                        android:layout_marginLeft="5dp"
+
+                        android:text="09/11/2017"
                         android:textColor="@color/black"
-                        />
+                        android:textSize="20dp" />
 
                 </TableRow>
 
@@ -139,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
-                        android:text="Status "                        android:textStyle="bold"
+                        android:text="To Date "                        android:textStyle="bold"
 
                         android:textColor="@color/black"
                         />
@@ -149,78 +152,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
-                        android:textColor="#4169E1"
-
-                        android:text="In Progress"
-                        />
-
-                </TableRow>
-                <TableRow android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
-
-                        android:text="%Completed "
                         android:textColor="@color/black"
-                        />
+                        android:layout_marginLeft="5dp"
 
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="60%"
-                        android:textColor="@color/black"
-                        />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
-
-                        android:text="Priority"
-                        android:textColor="@color/black"
-                        />
-
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="2 Normal"
-
-                        android:textColor="@color/green700"
-                        />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
-
-                        android:text="Date"
-                        android:textColor="@color/black"
-                        />
-
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="2011/04/25"
-                        android:textColor="@color/black"
+                        android:text="11/11/2017"
                         />
 
                 </TableRow>
@@ -232,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"                        android:textStyle="bold"
 
-                        android:text="From Time"
+                        android:text="Number of Days "
                         android:textColor="@color/black"
                         />
 
@@ -241,34 +176,104 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
-                        android:text="11:00"
+                        android:text="2"                        android:layout_marginLeft="5dp"
+
                         android:textColor="@color/black"
                         />
 
                 </TableRow>
 
-                <TableRow android:layout_marginTop="5dp">
+<!--                <TableRow android:layout_marginTop="5dp">-->
 
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
 
-                        android:text="To Time"
-                        android:textColor="@color/black"
-                        />
+<!--                        android:text="Priority"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
 
-                    <TextView
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:text="00:00"
-                        android:textColor="@color/black"
-                        />
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:text="2 Normal"-->
 
-                </TableRow>
+<!--                        android:textColor="@color/green700"-->
+<!--                        />-->
+
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="5dp">-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+
+<!--                        android:text="Date"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:text="2011/04/25"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                </TableRow>-->
+<!--                <TableRow android:layout_marginTop="5dp">-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+
+<!--                        android:text="From Time"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:text="11:00"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="5dp">-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+
+<!--                        android:text="To Time"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:padding="5dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:text="00:00"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
+
+<!--                </TableRow>-->
 
 
 
@@ -294,8 +299,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="Traffic jam is the situation when vehicles are stopped completely for some time period on the roads"
-                    android:textColor="@color/black"
+android:text="Reason: I need to go to my native as my grandpa is making a Will and distributing property! And he has requested everyone who is getting property needs to sign in some documents!!"                    android:textColor="@color/black"
                     />
 
             </LinearLayout>
@@ -326,7 +330,7 @@
 
             </LinearLayout>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Close"
@@ -337,7 +341,7 @@
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
 
 
 </LinearLayout>

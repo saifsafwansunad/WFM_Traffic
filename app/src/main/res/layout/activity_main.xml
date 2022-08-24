@@ -39,253 +39,253 @@
 
 
     </RelativeLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="250dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal">-->
-<!--        <LinearLayout-->
-<!--            android:background="@color/white"-->
-<!--            android:id="@+id/drawer"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="start"-->
-<!--            android:orientation="vertical">-->
-<!--            <ScrollView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        <LinearLayout-->
+    <!--            android:background="@color/white"-->
+    <!--            android:id="@+id/drawer"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_gravity="start"-->
+    <!--            android:orientation="vertical">-->
+    <!--            <ScrollView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical">-->
-<!--                    <RelativeLayout-->
-<!--                        android:id="@+id/emlm"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content">-->
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-<!--                            <ImageView-->
-<!--                                android:background="@color/white"-->
-<!--                                android:drawablePadding="5dp"-->
-<!--                                android:padding="5dp"-->
-<!--                                android:src="@drawable/wfm_icon"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="35dp"/>-->
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:layout_gravity="center_vertical"-->
-<!--                                android:gravity="center_vertical"-->
-<!--                                android:text="EMLM"-->
-<!--                                android:textColor="@color/purple_500"/>-->
-
-
-<!--                        </LinearLayout>-->
-<!--                        <ImageView-->
-<!--                            android:background="@color/white"-->
-<!--                            android:layout_gravity="top"-->
-<!--                            android:src="@drawable/closex"-->
-<!--                            android:layout_width="14dp"-->
-<!--                            android:layout_height="14dp"-->
-<!--                            android:paddingRight="3dp"-->
-<!--                            android:paddingTop="4dp"-->
-<!--                            android:layout_alignParentRight="true"/>-->
-<!--                    </RelativeLayout>-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical">-->
+    <!--                    <RelativeLayout-->
+    <!--                        android:id="@+id/emlm"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content">-->
+    <!--                        <LinearLayout-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:orientation="horizontal">-->
+    <!--                            <ImageView-->
+    <!--                                android:background="@color/white"-->
+    <!--                                android:drawablePadding="5dp"-->
+    <!--                                android:padding="5dp"-->
+    <!--                                android:src="@drawable/wfm_icon"-->
+    <!--                                android:layout_width="wrap_content"-->
+    <!--                                android:layout_height="35dp"/>-->
+    <!--                            <TextView-->
+    <!--                                android:layout_width="wrap_content"-->
+    <!--                                android:layout_height="match_parent"-->
+    <!--                                android:textStyle="bold"-->
+    <!--                                android:layout_gravity="center_vertical"-->
+    <!--                                android:gravity="center_vertical"-->
+    <!--                                android:text="EMLM"-->
+    <!--                                android:textColor="@color/purple_500"/>-->
 
 
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click1"-->
-<!--                        android:tag="1"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content">-->
-<!--                            &lt;!&ndash;                        <TextView&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_marginLeft="70dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_marginTop="10dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:background="@drawable/number"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_width="5dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_height="5dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:text=""/>&ndash;&gt;-->
-
-<!--                            <ImageView-->
-<!--                                android:tint="@color/purple_200"-->
-<!--                                android:padding="2dp"-->
-<!--                                android:src="@drawable/dashboard"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="Home"/>-->
-<!--                        </RelativeLayout>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Dashboard"/>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click2"-->
-<!--                        android:tag="2"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content">-->
-<!--                            &lt;!&ndash;                        <TextView&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:textColor="@color/icons"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_marginLeft="75dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_marginTop="5dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:background="@drawable/number"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:padding="3dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:id="@+id/textMatter"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:text="22"/>&ndash;&gt;-->
-<!--                            <ImageView-->
-<!--                                android:tint="@color/purple_200"-->
-<!--                                android:padding="1dp"-->
-<!--                                android:src="@drawable/dashboard"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="Import"/>-->
-<!--                        </RelativeLayout>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Task"/>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click3"-->
-<!--                        android:tag="3"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-<!--                        <ImageView-->
-<!--                            android:tint="@color/purple_200"-->
-<!--                            android:padding="10dp"-->
-<!--                            android:src="@drawable/dashboard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Home"/>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Fines"/>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click4"-->
-<!--                        android:tag="4"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <ImageView-->
-<!--                            android:tint="@color/purple_200"-->
-<!--                            android:padding="10dp"-->
-<!--                            android:src="@drawable/dashboard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Home"/>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Leaves"/>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click5"-->
-<!--                        android:tag="5"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <ImageView-->
-<!--                            android:tint="@color/purple_200"-->
-<!--                            android:padding="10dp"-->
-<!--                            android:src="@drawable/dashboard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Home"/>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Overtime"/>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/click6"-->
-<!--                        android:tag="6"-->
-<!--                        android:onClick="ClickNavigation"-->
-<!--                        android:background="@drawable/button_click"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <ImageView-->
-<!--                            android:tint="@color/purple_200"-->
-<!--                            android:padding="10dp"-->
-<!--                            android:src="@drawable/dashboard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Home"/>-->
-<!--                        <TextView-->
-<!--                            android:textColor="@color/purple_200"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Reports"/>-->
-<!--                    </LinearLayout>-->
-<!--                </LinearLayout>-->
-
-<!--            </ScrollView>-->
-<!--        </LinearLayout>-->
+    <!--                        </LinearLayout>-->
+    <!--                        <ImageView-->
+    <!--                            android:background="@color/white"-->
+    <!--                            android:layout_gravity="top"-->
+    <!--                            android:src="@drawable/closex"-->
+    <!--                            android:layout_width="14dp"-->
+    <!--                            android:layout_height="14dp"-->
+    <!--                            android:paddingRight="3dp"-->
+    <!--                            android:paddingTop="4dp"-->
+    <!--                            android:layout_alignParentRight="true"/>-->
+    <!--                    </RelativeLayout>-->
 
 
 
-<!--&lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
-<!--    <ListView-->
-<!--        android:id="@+id/left_drawer"-->
-<!--        android:layout_width="240dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="end"-->
-<!--        android:background="#111"-->
-<!--        android:choiceMode="singleChoice"-->
-<!--        android:divider="@android:color/transparent"-->
-<!--        android:dividerHeight="0dp" />-->
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click1"-->
+    <!--                        android:tag="1"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+    <!--                        <RelativeLayout-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content">-->
+    <!--                            &lt;!&ndash;                        <TextView&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_marginLeft="70dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:background="@drawable/number"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_width="5dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_height="5dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:text=""/>&ndash;&gt;-->
+
+    <!--                            <ImageView-->
+    <!--                                android:tint="@color/purple_200"-->
+    <!--                                android:padding="2dp"-->
+    <!--                                android:src="@drawable/dashboard"-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:text="Home"/>-->
+    <!--                        </RelativeLayout>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Dashboard"/>-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click2"-->
+    <!--                        android:tag="2"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+    <!--                        <RelativeLayout-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content">-->
+    <!--                            &lt;!&ndash;                        <TextView&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:textColor="@color/icons"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_marginLeft="75dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:background="@drawable/number"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:padding="3dp"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:id="@+id/textMatter"&ndash;&gt;-->
+    <!--                            &lt;!&ndash;                            android:text="22"/>&ndash;&gt;-->
+    <!--                            <ImageView-->
+    <!--                                android:tint="@color/purple_200"-->
+    <!--                                android:padding="1dp"-->
+    <!--                                android:src="@drawable/dashboard"-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:text="Import"/>-->
+    <!--                        </RelativeLayout>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Task"/>-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click3"-->
+    <!--                        android:tag="3"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+    <!--                        <ImageView-->
+    <!--                            android:tint="@color/purple_200"-->
+    <!--                            android:padding="10dp"-->
+    <!--                            android:src="@drawable/dashboard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Home"/>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Fines"/>-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click4"-->
+    <!--                        android:tag="4"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:tint="@color/purple_200"-->
+    <!--                            android:padding="10dp"-->
+    <!--                            android:src="@drawable/dashboard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Home"/>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Leaves"/>-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click5"-->
+    <!--                        android:tag="5"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:tint="@color/purple_200"-->
+    <!--                            android:padding="10dp"-->
+    <!--                            android:src="@drawable/dashboard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Home"/>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Overtime"/>-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/click6"-->
+    <!--                        android:tag="6"-->
+    <!--                        android:onClick="ClickNavigation"-->
+    <!--                        android:background="@drawable/button_click"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="100dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:tint="@color/purple_200"-->
+    <!--                            android:padding="10dp"-->
+    <!--                            android:src="@drawable/dashboard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Home"/>-->
+    <!--                        <TextView-->
+    <!--                            android:textColor="@color/purple_200"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="Reports"/>-->
+    <!--                    </LinearLayout>-->
+    <!--                </LinearLayout>-->
+
+    <!--            </ScrollView>-->
+    <!--        </LinearLayout>-->
+
+
+
+    <!--&lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
+    <!--    <ListView-->
+    <!--        android:id="@+id/left_drawer"-->
+    <!--        android:layout_width="240dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_gravity="end"-->
+    <!--        android:background="#111"-->
+    <!--        android:choiceMode="singleChoice"-->
+    <!--        android:divider="@android:color/transparent"-->
+    <!--        android:dividerHeight="0dp" />-->
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

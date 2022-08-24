@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -56,6 +57,7 @@ public static final int PICKFILE_RESULT_CODE = 1;
         setContentView(R.layout.activity_request_leave);
         title=findViewById(R.id.title);
         title.setText("Request Leave");
+
         imageViewUpload=findViewById(R.id.upload_imgview);
         editTextUpoad=findViewById(R.id.upload_edittext);
         relativeLayoutFromDate=findViewById(R.id.fromdate_layout);
@@ -63,6 +65,23 @@ public static final int PICKFILE_RESULT_CODE = 1;
         textViewToDate=findViewById(R.id.to_date_textview);
         textViewFromDate=findViewById(R.id.fromdate_textview);
         spinnerLeaveCaegory=findViewById(R.id.leave_category_spinner);
+        ImageView backarrow=findViewById(R.id.imgBackArrow);
+
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         ArrayAdapter ad
                 = new ArrayAdapter(

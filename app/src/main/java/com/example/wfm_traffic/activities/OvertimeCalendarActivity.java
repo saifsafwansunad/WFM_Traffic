@@ -15,6 +15,7 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
@@ -77,7 +78,15 @@ public class OvertimeCalendarActivity extends AppCompatActivity implements Adapt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overtime_calendar);
-
+        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         title=findViewById(R.id.title);
         title.setText("Overtime Calendar");

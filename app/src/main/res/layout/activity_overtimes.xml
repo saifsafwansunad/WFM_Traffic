@@ -281,6 +281,7 @@ I HEREBY CERTIFY THAT THE ABOVE HOURS WORKED WAS URGENT AND NECESSARY, AND THIS 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:id="@+id/submit_btn"
                         android:backgroundTint="@color/purple_500"
                         android:text="Submit" />
 

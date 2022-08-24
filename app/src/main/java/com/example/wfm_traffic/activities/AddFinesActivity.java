@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -15,8 +16,10 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.wfm_traffic.R;
+import com.google.android.material.button.MaterialButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -71,14 +74,34 @@ public class AddFinesActivity extends AppCompatActivity {
         title=findViewById(R.id.title);
         title.setText("Add Task");
         textViewDate=findViewById(R.id.date_textview);
+
+        MaterialButton materialButtonSubmit=findViewById(R.id.submit_btn);
+
+        materialButtonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Toast.makeText(AddFinesActivity.this, "Fines Added Successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ImageView backarrow=findViewById(R.id.imgBackArrow);
+
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         ImageView imageViewNotification=findViewById(R.id.notification);
-//        imageViewNotification.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override

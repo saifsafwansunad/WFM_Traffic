@@ -5,9 +5,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +33,15 @@ public class OvertimeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_overtime_list);
 
         addition();
+        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         title=findViewById(R.id.title);
         title.setText("Overtime List");

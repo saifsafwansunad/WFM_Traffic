@@ -16,6 +16,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -149,8 +150,25 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        ImageView imageViewNotification=findViewById(R.id.offline);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
 
+//        ImageView imageViewNotification=findViewById(R.id.notification);
+//        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         expandableListView = findViewById(R.id.expandableListView);
 //        NavigationView navigationView = findViewById(R.id.nav_view);

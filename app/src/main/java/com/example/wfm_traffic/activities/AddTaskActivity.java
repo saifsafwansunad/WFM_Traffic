@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -28,6 +29,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.wfm_traffic.R;
+import com.google.android.material.button.MaterialButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -65,7 +67,9 @@ public class AddTaskActivity extends AppCompatActivity  implements EasyPermissio
     int hour, minute;
     EditText editTextUpoad;
     ImageView imageViewUpload;
-    RelativeLayout relativeLayoutFromDate,relativeLayouTodate;
+//    RelativeLayout relativeLayoutFromDate,relativeLayouTodate;
+    RelativeLayout relativeLayoutDate;
+
     TextView textViewFromDate,textViewToDate;
 
 
@@ -80,11 +84,18 @@ TextView title;
         Spinner spinnerAssgine = findViewById(R.id.assigned_to_spinner);
         Spinner spinnerstatus = findViewById(R.id.status_spinner);
         Spinner spinnerpriority = findViewById(R.id.priority_spinner);
-        relativeLayoutFromDate=findViewById(R.id.fromdate_layout);
-        relativeLayouTodate=findViewById(R.id.to_date_layout);
-        textViewToDate=findViewById(R.id.to_date_textview);
-        textViewFromDate=findViewById(R.id.fromdate_textview);
-
+        relativeLayoutDate=findViewById(R.id.date_layout);
+//        relativeLayouTodate=findViewById(R.id.to_date_layout);
+//        textViewToDate=findViewById(R.id.date_textview);
+//        textViewFromDate=findViewById(R.id.fromdate_textview);
+MaterialButton materialButtonSubmit=findViewById(R.id.submit_btn);
+materialButtonSubmit.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        finish();
+        Toast.makeText(AddTaskActivity.this, "Task Added", Toast.LENGTH_SHORT).show();
+    }
+});
         imageViewUpload = findViewById(R.id.upload_imgview);
         editTextUpoad = findViewById(R.id.upload_edittext);
 
@@ -99,7 +110,7 @@ TextView title;
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH,month);
                 myCalendar.set(Calendar.DAY_OF_MONTH,day);
-                updateLabelFromDate();
+                updateLabel();
             }
 
         };
@@ -113,22 +124,39 @@ TextView title;
             }
 
         };
+        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        relativeLayoutFromDate.setOnClickListener(new View.OnClickListener() {
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        ImageView backarrow=findViewById(R.id.imgBackArrow);
+
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        relativeLayoutDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(AddTaskActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
             }
         });
-
-        relativeLayouTodate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new DatePickerDialog(AddTaskActivity.this,dateTo,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-
-            }
-        });
+//
+//        relativeLayouTodate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                new DatePickerDialog(AddTaskActivity.this,dateTo,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+//
+//            }
+//        });
 
         // Create the instance of ArrayAdapter
         // having the list of courses
@@ -403,15 +431,15 @@ TextView title;
     }
 
 
-    private void updateLabelFromDate(){
-        String myFormat="MM/dd/yy";
-        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-        textViewFromDate.setText(dateFormat.format(myCalendar.getTime()));
-    }
+//    private void updateLabelFromDate(){
+//        String myFormat="MM/dd/yy";
+//        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+//        textViewFromDate.setText(dateFormat.format(myCalendar.getTime()));
+//    }
     private void updateLabelToDate(){
         String myFormat="MM/dd/yy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-        textViewToDate.setText(dateFormat.format(myCalendar.getTime()));
+        textViewDate.setText(dateFormat.format(myCalendar.getTime()));
     }
 
 }

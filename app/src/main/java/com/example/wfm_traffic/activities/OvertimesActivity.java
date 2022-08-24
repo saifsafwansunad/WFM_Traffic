@@ -4,18 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.wfm_traffic.R;
+import com.google.android.material.button.MaterialButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,11 +42,29 @@ TextView title;
         setContentView(R.layout.activity_overtimes);
         Spinner spinDayofweek = findViewById(R.id.dayofwekspinner);
         RelativeLayout relativeLayoutDate=findViewById(R.id.date_layout);
+        MaterialButton materialButtonSubmit=findViewById(R.id.submit_btn);
+        materialButtonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(OvertimesActivity.this, "Submitted Successfully", Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+        });
         textViewFromTime=findViewById(R.id.from_time_textview);
         textViewToTime=findViewById(R.id.to_time_textview);
         title=findViewById(R.id.title);
         title.setText("Overtimes");
         textViewDate=findViewById(R.id.date_textview);
+        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         ArrayAdapter ad
                 = new ArrayAdapter(

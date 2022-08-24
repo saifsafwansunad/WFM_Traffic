@@ -1,6 +1,7 @@
 package com.example.wfm_traffic.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wfm_traffic.R;
+import com.example.wfm_traffic.activities.DetailsActivity;
+import com.example.wfm_traffic.activities.LeaveGetDetailsActivity;
 import com.example.wfm_traffic.model.LeaveDetailsModel;
 import com.example.wfm_traffic.model.TaskModel;
+import com.google.android.material.button.MaterialButton;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.ViewHolder> {
     private ArrayList<LeaveDetailsModel> tsk;
@@ -45,6 +51,31 @@ public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.
         holder.from.setText(tsk.get(position).getTaskFrom());
         holder.title.setText(tsk.get(position).getTaskTitle());
 
+        holder.materialButtonViewDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myactivity = new Intent(context.getApplicationContext(), LeaveGetDetailsActivity.class);
+                myactivity.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                context.getApplicationContext().startActivity(myactivity);
+//                ((Activity) context).overridePendingTransition(R.anim.slide_out_bottom, R.anim.slide_in_bottom);
+
+
+
+//                FragmentManager fm = getFragmentManager();
+//                FragmentTransaction ft = fm.beginTransaction();
+//
+//                MyFragment next = getMyFragment();
+//
+//                ft.add(R.id.MyLayout,next);
+//                ft.setCustomAnimations(R.anim.slide_in_right,0);
+//                ft.show(next);
+//                ft.commit();
+            }
+        });
+
+
+
 //        holder.to.setText(tsk.get(position).getTaskTo());
     }
 
@@ -55,6 +86,7 @@ public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView title,id,task,cate,assigned,date,from,to;
+        MaterialButton materialButtonViewDetail;
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.leave_detail_title_tv);
@@ -65,7 +97,7 @@ public class LeaveDetailAdapter extends RecyclerView.Adapter<LeaveDetailAdapter.
             date = itemView.findViewById(R.id.textView10);
             from = itemView.findViewById(R.id.textView12);
 //        to = itemView.findViewById(R.id.textView14);
-
+            materialButtonViewDetail=itemView.findViewById(R.id.viewDetails);
         }
     }
 }

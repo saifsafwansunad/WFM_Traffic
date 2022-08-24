@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.wfm_traffic.R;
@@ -27,6 +31,24 @@ RecyclerView recyclerViewMsgs;
         recyclerViewMsgs=findViewById(R.id.messages_recyclerview);
        TextView title=findViewById(R.id.title);
         title.setText("Messages");
+        ImageView backarrow=findViewById(R.id.imgBackArrow);
+
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+//        ImageView imageViewNotification=findViewById(R.id.notification);
+//        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+
         messagesModels=new ArrayList<>();
         messagesModels.add(new MessagesModel(R.drawable.profile,"Jonathan","San Francisco USA","Software Engineer","SomeCompany Inc"));
         messagesModels.add(new MessagesModel(R.drawable.profile,"Jonathan","San Francisco USA","Software Engineer","SomeCompany Inc"));
@@ -38,7 +60,7 @@ RecyclerView recyclerViewMsgs;
 //        LinearLayoutManager layoutManager= new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         recyclerViewMsgs.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerViewMsgs.setAdapter(new MessagesAdapter(messagesModels,getApplicationContext()));
+        recyclerViewMsgs.setAdapter(new MessagesAdapter(messagesModels, getApplicationContext()));
 //        assigned_task_rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 //        assigned_task_rv.setAdapter(new OverTimeAdapter(taskModels,getApplicationContext()));
     }

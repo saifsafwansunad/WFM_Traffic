@@ -376,30 +376,28 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true">
 
-                <TextView
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/viewDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center_vertical"
-                    android:backgroundTint="@color/light_violet"
+                    android:backgroundTint="#17A2B8"
 
                     android:inputType="textCapSentences"
-                    android:paddingLeft="25dp"
-                    android:text="Details"
-                    android:textColor="@color/black"
+                    android:text="Get Details"
+                    android:textColor="@color/white"
 
-                    android:textStyle="bold"
 
                     />
 
-                <ImageView
-                    android:id="@+id/details_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+<!--                <ImageView-->
+<!--                    android:id="@+id/details_icon"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="20dp"-->
 
-                    android:src="@drawable/ic_baseline_arrow_forward_24" />
+<!--                    android:src="@drawable/ic_baseline_arrow_forward_24" />-->
             </LinearLayout>
         </RelativeLayout>
 

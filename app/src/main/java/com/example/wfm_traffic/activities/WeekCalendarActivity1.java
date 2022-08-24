@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -52,6 +53,15 @@ public class WeekCalendarActivity1 extends AppCompatActivity implements WeekView
                 finish();
             }
         });
+            ImageView imageViewNotification=findViewById(R.id.notification);
+            imageViewNotification.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                            Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                            startActivity(intent);
+                    }
+            });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);
