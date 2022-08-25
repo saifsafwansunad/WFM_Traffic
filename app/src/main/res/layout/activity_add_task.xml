@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="16dp"
+            android:textStyle="bold"
             android:text="FILL THE FORM BELOW TO ADD NEW TASK"/>
         <TextView
             android:layout_width="wrap_content"

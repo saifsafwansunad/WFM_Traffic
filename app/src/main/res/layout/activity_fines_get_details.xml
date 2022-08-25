@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Comment Traffic: Officer"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:padding="5dp"
             android:text="When Trench Town man stop laugh and block off traffic. Then dem wheel and pop off and dem start clap it. With the pin file dung an it ah beat rapid"
 
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <Button
             android:id="@+id/close_btn"

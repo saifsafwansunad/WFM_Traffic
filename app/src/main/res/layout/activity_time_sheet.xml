@@ -20,10 +20,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-
-                android:text="TRAFFIC SECTION"
+android:textStyle="bold"
+                android:text="DAILY TIME SHEET - TRAFFIC SECTION"
                 android:textColor="@color/black"
-                android:textSize="24dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -32,9 +32,13 @@
 
                 android:text="COM FORM 09"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#dcdcdc"/>
             <TableLayout
                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -48,7 +52,8 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
                         android:text="Employee : "
                         android:textColor="@color/black"
                         />
@@ -58,7 +63,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="Gavin Joyce"
                         android:textColor="@color/black"
                         />
@@ -71,7 +76,9 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
                         android:text="Date : "
                         android:textColor="@color/black"
                         />
@@ -81,7 +88,7 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="2011/04/25"
                         android:textColor="@color/black"/>
                 </TableRow>
@@ -93,7 +100,9 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
                         android:text="Start Time : "
                         android:textColor="@color/black"
                         />
@@ -103,7 +112,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="09:30"
                         android:textColor="@color/black"
                         />
@@ -116,7 +125,8 @@
                         android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"                        android:textStyle="bold"
+
                         android:text="End Time : "
                         android:textColor="@color/black"
                         />
@@ -126,7 +136,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="21:40"
                         android:textColor="@color/black"
                         />
@@ -140,7 +150,8 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"                        android:textStyle="bold"
+
                         android:text="Normal Hours : "
                         android:textColor="@color/black"
                         />
@@ -150,7 +161,7 @@
                         android:id="@+id/textView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="08:00"
                         android:textColor="@color/black"
                         />
@@ -164,7 +175,8 @@
                         android:id="@+id/textView11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"                        android:textStyle="bold"
+
                         android:text="Over Time Hours : "
                         android:textColor="@color/black"
                         />
@@ -174,7 +186,7 @@
                         android:id="@+id/textView12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="04:30"
 
                         android:textColor="@color/black"
@@ -186,11 +198,12 @@
 
             </TableLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="vertical">
                 <TextView
@@ -198,43 +211,45 @@
                     android:layout_height="wrap_content"
                     android:text="Vehicle Registration :"
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
-                <EditText
-                    android:id="@+id/report_subject"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:background="@drawable/rectange_background"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Km for the day :"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="16dp"/>
                 <EditText
                     android:id="@+id/report_subject3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:background="@drawable/rectange_background"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_border"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KM for the Day :"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"/>
+                <EditText
+                    android:id="@+id/report_subject1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_border"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="vertical">
                 <TextView
@@ -242,13 +257,14 @@
                     android:layout_height="wrap_content"
                     android:text="Daily tasks as indicated on daily program :"
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="16dp"/>
                 <EditText
-                    android:id="@+id/report_subject1"
+                    android:id="@+id/report_subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:background="@drawable/rectange_background"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_border"
                     />
             </LinearLayout>
 
@@ -256,6 +272,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:weightSum="4"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp">
 
@@ -535,21 +552,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-
+android:layout_marginTop="10dp"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reason for deviation on duty for the day and place of duty :"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Reason for deviation on duty for the day and place of duty :"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="16dp"/>-->
                 <EditText
                     android:id="@+id/report_message"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="top"
+                    android:hint="Reason for deviation on duty for the day and place of duty "
                     android:padding="5dp"
-                    android:background="@drawable/rectange_background"
+                    android:background="@drawable/edit_text_border"
                     />
             </LinearLayout>
 
@@ -557,21 +575,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-
+android:layout_marginTop="10dp"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Comments : Supervisor"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Comments : Supervisor"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="16dp"/>-->
                 <EditText
                     android:id="@+id/report_message1"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="top"
+                    android:hint="Comments : Supervisor"
                     android:padding="5dp"
-                    android:background="@drawable/rectange_background"
+                    android:background="@drawable/edit_text_border"
                     />
             </LinearLayout>
 

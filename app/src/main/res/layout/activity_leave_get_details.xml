@@ -43,7 +43,7 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"
                         android:text="ID : "
                         android:textColor="@color/black"
@@ -55,7 +55,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="#98651"
                         android:textColor="@color/black"
                         />
@@ -68,7 +68,7 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Leave Category"
                         android:textColor="@color/black"
@@ -79,7 +79,7 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:layout_marginLeft="5dp"
+                        android:textSize="16dp"                        android:layout_marginLeft="5dp"
 
                         android:text="Casual Leave(CL)"
                         android:textColor="@color/black"/>
@@ -92,7 +92,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Rquest Date "
                         android:textColor="@color/black"
@@ -103,7 +103,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:layout_marginLeft="5dp"
+                        android:textSize="16dp"                        android:layout_marginLeft="5dp"
 
                         android:text="03/11/2017"
                         android:textColor="@color/black"
@@ -117,7 +117,7 @@
                         android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="From Date"
                         android:textColor="@color/black"
@@ -131,7 +131,7 @@
 
                         android:text="09/11/2017"
                         android:textColor="@color/black"
-                        android:textSize="20dp" />
+                        android:textSize="16dp" />
 
                 </TableRow>
 
@@ -141,7 +141,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="To Date "                        android:textStyle="bold"
 
                         android:textColor="@color/black"
@@ -151,7 +151,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:layout_marginLeft="5dp"
 
@@ -165,7 +165,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Number of Days "
                         android:textColor="@color/black"
@@ -175,7 +175,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="2"                        android:layout_marginLeft="5dp"
 
                         android:textColor="@color/black"
@@ -189,7 +189,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+<!--                        android:textSize="16dp"                        android:textStyle="bold"-->
 
 <!--                        android:text="Priority"-->
 <!--                        android:textColor="@color/black"-->
@@ -199,7 +199,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"-->
+<!--                        android:textSize="16dp"-->
 <!--                        android:text="2 Normal"-->
 
 <!--                        android:textColor="@color/green700"-->
@@ -213,7 +213,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+<!--                        android:textSize="16dp"                        android:textStyle="bold"-->
 
 <!--                        android:text="Date"-->
 <!--                        android:textColor="@color/black"-->
@@ -223,7 +223,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"-->
+<!--                        android:textSize="16dp"-->
 <!--                        android:text="2011/04/25"-->
 <!--                        android:textColor="@color/black"-->
 <!--                        />-->
@@ -235,7 +235,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+<!--                        android:textSize="16dp"                        android:textStyle="bold"-->
 
 <!--                        android:text="From Time"-->
 <!--                        android:textColor="@color/black"-->
@@ -245,7 +245,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"-->
+<!--                        android:textSize="16dp"-->
 <!--                        android:text="11:00"-->
 <!--                        android:textColor="@color/black"-->
 <!--                        />-->
@@ -258,7 +258,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"                        android:textStyle="bold"-->
+<!--                        android:textSize="16dp"                        android:textStyle="bold"-->
 
 <!--                        android:text="To Time"-->
 <!--                        android:textColor="@color/black"-->
@@ -268,7 +268,7 @@
 <!--                        android:padding="5dp"-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="wrap_content"-->
-<!--                        android:textSize="20dp"-->
+<!--                        android:textSize="16dp"-->
 <!--                        android:text="00:00"-->
 <!--                        android:textColor="@color/black"-->
 <!--                        />-->
@@ -288,7 +288,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:text="Description"
                     android:textColor="@color/black"
@@ -298,7 +298,7 @@
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
 android:text="Reason: I need to go to my native as my grandpa is making a Will and distributing property! And he has requested everyone who is getting property needs to sign in some documents!!"                    android:textColor="@color/black"
                     />
 
@@ -313,7 +313,7 @@ android:text="Reason: I need to go to my native as my grandpa is making a Will a
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:text="Attachment"
                     android:textColor="@color/black"
@@ -323,7 +323,7 @@ android:text="Reason: I need to go to my native as my grandpa is making a Will a
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:text="http://wfm-traffic.demo4uonline.com/attachments/Traffic-admin-system-output-reports.pdf"
                     android:textColor="@color/black"
                     />

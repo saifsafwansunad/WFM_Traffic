@@ -43,7 +43,7 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"
                         android:text="ID : "
                         android:textColor="@color/black"
@@ -54,7 +54,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="#1"
                         android:textColor="@color/black"
                         />
@@ -67,7 +67,7 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Task Title "
                         android:textColor="@color/black"
@@ -78,7 +78,7 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="Patrol Duty"
                         android:textColor="@color/black"/>
                 </TableRow>
@@ -90,7 +90,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Task Category "
                         android:textColor="@color/black"
@@ -101,7 +101,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="Category One"
                         android:textColor="@color/black"
                         />
@@ -114,7 +114,7 @@
                         android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Assigned To: "
                         android:textColor="@color/black"
@@ -125,7 +125,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="Ari Satou"
                         android:textColor="@color/black"
                         />
@@ -138,7 +138,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="Status "                        android:textStyle="bold"
 
                         android:textColor="@color/black"
@@ -148,7 +148,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textColor="#4169E1"
 
                         android:text="In Progress"
@@ -161,7 +161,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="%Completed "
                         android:textColor="@color/black"
@@ -171,7 +171,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="60%"
                         android:textColor="@color/black"
                         />
@@ -184,7 +184,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Priority"
                         android:textColor="@color/black"
@@ -194,7 +194,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="2 Normal"
 
                         android:textColor="@color/green700"
@@ -208,7 +208,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="Date"
                         android:textColor="@color/black"
@@ -218,7 +218,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="2011/04/25"
                         android:textColor="@color/black"
                         />
@@ -230,7 +230,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="From Time"
                         android:textColor="@color/black"
@@ -240,7 +240,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="11:00"
                         android:textColor="@color/black"
                         />
@@ -253,7 +253,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"                        android:textStyle="bold"
+                        android:textSize="16dp"                        android:textStyle="bold"
 
                         android:text="To Time"
                         android:textColor="@color/black"
@@ -263,7 +263,7 @@
                         android:padding="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:text="00:00"
                         android:textColor="@color/black"
                         />
@@ -283,7 +283,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:text="Description"
                     android:textColor="@color/black"
@@ -293,7 +293,7 @@
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:text="Traffic jam is the situation when vehicles are stopped completely for some time period on the roads"
                     android:textColor="@color/black"
                     />
@@ -309,7 +309,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:text="Attachment"
                     android:textColor="@color/black"
@@ -319,7 +319,7 @@
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:text="http://wfm-traffic.demo4uonline.com/attachments/Traffic-admin-system-output-reports.pdf"
                     android:textColor="@color/black"
                     />

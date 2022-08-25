@@ -20,7 +20,9 @@
             android:layout_height="wrap_content"
             android:text="Casual Leave"
             android:id="@+id/leave_detail_title_tv"
-            android:textSize="30sp"/>
+            android:textStyle="bold"
+
+            android:textSize="24dp"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
