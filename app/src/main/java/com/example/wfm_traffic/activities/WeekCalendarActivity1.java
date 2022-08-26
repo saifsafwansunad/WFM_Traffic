@@ -29,6 +29,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class WeekCalendarActivity1 extends AppCompatActivity implements WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener {
 
     private static final int TYPE_DAY_VIEW = 1;
@@ -53,7 +56,7 @@ public class WeekCalendarActivity1 extends AppCompatActivity implements WeekView
                 finish();
             }
         });
-            ImageView imageViewNotification=findViewById(R.id.notification);
+            AnimatedIconView imageViewNotification=findViewById(R.id.notification);
             imageViewNotification.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -61,7 +64,11 @@ public class WeekCalendarActivity1 extends AppCompatActivity implements WeekView
                             startActivity(intent);
                     }
             });
-        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+            imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+            imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+            imageViewNotification.startAnimation();
+
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);

@@ -44,6 +44,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class OvertimeCalendarActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener {
 
     List<CalenderObj> daysListEvent = new ArrayList<>();
@@ -78,7 +81,7 @@ public class OvertimeCalendarActivity extends AppCompatActivity implements Adapt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overtime_calendar);
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +90,9 @@ public class OvertimeCalendarActivity extends AppCompatActivity implements Adapt
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         title=findViewById(R.id.title);
         title.setText("Overtime Calendar");

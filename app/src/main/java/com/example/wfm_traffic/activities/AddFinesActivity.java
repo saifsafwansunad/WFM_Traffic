@@ -25,6 +25,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class AddFinesActivity extends AppCompatActivity {
 
     Spinner spinnerSex,spinnerCity,spinnerState,spinnerVehicleType,spinnerVehicleColour,spinnerRegState;
@@ -72,7 +75,7 @@ public class AddFinesActivity extends AppCompatActivity {
         spinnerPaymenttype=findViewById(R.id.payment_type_spinner);
         RelativeLayout relativeLayoutDate=findViewById(R.id.date_layout);
         title=findViewById(R.id.title);
-        title.setText("Add Task");
+        title.setText("Add Fines");
         textViewDate=findViewById(R.id.date_textview);
 
         MaterialButton materialButtonSubmit=findViewById(R.id.submit_btn);
@@ -93,7 +96,7 @@ public class AddFinesActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +105,9 @@ public class AddFinesActivity extends AppCompatActivity {
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override

@@ -20,6 +20,9 @@ import com.example.wfm_traffic.model.TaskModel;
 
 import java.util.ArrayList;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class OvertimeListActivity extends AppCompatActivity {
 
     AppCompatButton Button,button1,button2,button3,button4;
@@ -33,7 +36,7 @@ public class OvertimeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_overtime_list);
 
         addition();
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +45,9 @@ public class OvertimeListActivity extends AppCompatActivity {
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         title=findViewById(R.id.title);
         title.setText("Overtime List");

@@ -75,6 +75,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class MainActivity extends AppCompatActivity implements adapteCard.ListItemClickListener {
 
     ImageView drawer_left;
@@ -93,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
     private SliderTooltip sliderTooltip;
     HomePageBinding homePageBinding;
     private LineChart volumeReportChart;
+
+    public AnimatedIconView imageViewNotification;
 
     RecyclerView recyclerViewCard;
     RecyclerView.Adapter adapter;
@@ -150,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        ImageView imageViewNotification=findViewById(R.id.offline);
+        imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,9 +163,10 @@ public class MainActivity extends AppCompatActivity implements adapteCard.ListIt
                 startActivity(intent);
             }
         });
-        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+//        animatedIconView.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
 
-
+        imageViewNotification.startAnimation();
 //        ImageView imageViewNotification=findViewById(R.id.notification);
 //        imageViewNotification.setOnClickListener(new View.OnClickListener() {
 //            @Override

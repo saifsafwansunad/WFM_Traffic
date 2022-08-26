@@ -28,6 +28,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class OvertimeApprovalActivity extends AppCompatActivity {
     AppCompatButton Button,button1,button2,button3,button4;
     RecyclerView assigned_task_rv;
@@ -65,7 +68,7 @@ textViewDate2=findViewById(R.id.date2_textview);
                 finish();
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +77,9 @@ textViewDate2=findViewById(R.id.date2_textview);
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
 
 

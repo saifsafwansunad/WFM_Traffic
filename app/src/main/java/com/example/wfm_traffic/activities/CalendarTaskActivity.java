@@ -46,6 +46,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class CalendarTaskActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener{
 
     List<CalenderObj> daysListEvent = new ArrayList<>();
@@ -275,7 +278,7 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
 
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -284,6 +287,9 @@ public class CalendarTaskActivity extends AppCompatActivity implements AdapterVi
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

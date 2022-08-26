@@ -36,6 +36,8 @@ import java.util.List;
 import java.util.Locale;
 
 import pub.devrel.easypermissions.EasyPermissions;
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
 
 public class RequestLeaveActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 TextView title;
@@ -73,7 +75,7 @@ public static final int PICKFILE_RESULT_CODE = 1;
                 finish();
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +84,9 @@ public static final int PICKFILE_RESULT_CODE = 1;
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         ArrayAdapter ad
                 = new ArrayAdapter(

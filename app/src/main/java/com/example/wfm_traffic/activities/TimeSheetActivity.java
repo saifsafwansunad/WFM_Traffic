@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.example.wfm_traffic.R;
 import com.google.android.material.button.MaterialButton;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class TimeSheetActivity extends AppCompatActivity {
 
     TextView title;
@@ -40,7 +43,7 @@ public class TimeSheetActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +52,9 @@ public class TimeSheetActivity extends AppCompatActivity {
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
     }
 }

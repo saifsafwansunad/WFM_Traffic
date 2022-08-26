@@ -65,13 +65,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/offline"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:padding="3dp"
+
+                <tarek360.animated.icons.AnimatedIconView
+                    android:id="@+id/notification"
+
+                    android:layout_width="28dp"
                     android:layout_toLeftOf="@+id/dots_report"
-                    android:src="@drawable/bell_100"/>
+                    android:layout_height="28dp"/>
 
                 <ImageView
                     android:id="@+id/dots_report"

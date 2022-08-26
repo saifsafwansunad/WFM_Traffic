@@ -15,6 +15,7 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
@@ -42,6 +43,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
+
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
 
 public class FinesCalendarActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener {
 
@@ -88,7 +92,18 @@ public class FinesCalendarActivity extends AppCompatActivity implements AdapterV
             }
         });
 
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MessagesActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
 
+        imageViewNotification.startAnimation();
         daysListEventAll.add(new CalenderObj(1, "2020", "October", "f"));
         daysListEventAll.add(new CalenderObj(2, "2020", "October", "h"));
         daysListEventAll.add(new CalenderObj(3, "2020", "October", "p"));

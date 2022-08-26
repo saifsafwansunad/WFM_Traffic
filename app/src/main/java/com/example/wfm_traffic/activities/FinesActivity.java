@@ -20,6 +20,9 @@ import com.example.wfm_traffic.model.TaskModel;
 
 import java.util.ArrayList;
 
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
+
 public class FinesActivity extends AppCompatActivity {
 
     AppCompatButton Button,button1,button2,button3,button4;
@@ -44,7 +47,7 @@ public class FinesActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        AnimatedIconView imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +56,9 @@ public class FinesActivity extends AppCompatActivity {
             }
         });
         imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
+
+        imageViewNotification.startAnimation();
 
         assigned_task_rv = findViewById(R.id.assigned_task_recyclerview);
         assigned_task_rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

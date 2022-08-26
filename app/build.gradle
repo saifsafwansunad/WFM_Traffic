@@ -52,7 +52,7 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'pub.devrel:easypermissions:0.2.0'
-
+    implementation "com.github.tarek360:Animated-Icons:1.2.0"
 
 
     compile 'com.github.alamkanak:android-week-view:1.2.6'

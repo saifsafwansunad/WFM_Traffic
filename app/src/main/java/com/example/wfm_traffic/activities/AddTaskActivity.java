@@ -37,6 +37,8 @@ import java.util.List;
 import java.util.Locale;
 
 import pub.devrel.easypermissions.EasyPermissions;
+import tarek360.animated.icons.AnimatedIconView;
+import tarek360.animated.icons.IconFactory;
 
 import static com.example.wfm_traffic.activities.RequestLeaveActivity.PICKFILE_RESULT_CODE;
 
@@ -71,7 +73,7 @@ public class AddTaskActivity extends AppCompatActivity  implements EasyPermissio
     RelativeLayout relativeLayoutDate;
 
     TextView textViewFromDate,textViewToDate;
-
+    public AnimatedIconView imageViewNotification;
 
     RelativeLayout relativeLayoutFromTime;
 TextView title;
@@ -124,7 +126,7 @@ materialButtonSubmit.setOnClickListener(new View.OnClickListener() {
             }
 
         };
-        ImageView imageViewNotification=findViewById(R.id.notification);
+        imageViewNotification=findViewById(R.id.notification);
         imageViewNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,8 +134,11 @@ materialButtonSubmit.setOnClickListener(new View.OnClickListener() {
                 startActivity(intent);
             }
         });
+        imageViewNotification.setAnimatedIcon(IconFactory.iconNotificationAlert().setNotificationCount(3));
 
-        imageViewNotification.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+        imageViewNotification.startAnimation();
+
+
         ImageView backarrow=findViewById(R.id.imgBackArrow);
 
         backarrow.setOnClickListener(new View.OnClickListener() {

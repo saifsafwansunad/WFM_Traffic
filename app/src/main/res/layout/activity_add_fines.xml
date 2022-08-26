@@ -15,7 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
@@ -25,16 +25,7 @@
             android:textStyle="bold"
             android:text="DAILY FINES - TRAFFIC SECTION"/>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:cardBackgroundColor="#E5E4E2"
-app:strokeWidth="1dp"
-            app:strokeColor="@color/purple_500"
-            android:background="@color/cardview_light_background"
 
-            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -55,7 +46,7 @@ app:strokeWidth="1dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edit_text_border"
         android:hint="Enter the First Name"
-        android:padding="10dp" />
+        android:padding="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,7 +61,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Enter the Last Name"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,7 +96,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Enter the Full Address"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -162,25 +153,19 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Ener ZipCode"
-            android:padding="10dp" />
+            android:padding="7dp" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#E5E4E2"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/purple_500"
-        android:background="@color/cardview_light_background"
-
-        >
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="5dp"
+    android:background="#dcdcdc"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -195,7 +180,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Enter Vehicle Name"
-            android:padding="10dp" />
+            android:padding="7dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -209,15 +194,14 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Ener Vehicle Plate No"
-            android:padding="10dp" />
-
+            android:padding="7dp" />
 
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vehicle Type :"
+            android:layout_height="19dp"
             android:layout_marginTop="10dp"
+            android:text="Vehicle Type :"
             android:textColor="@color/black" />
 
         <RelativeLayout
@@ -276,23 +260,17 @@ app:strokeWidth="1dp"
                 />
         </RelativeLayout>
     </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#E5E4E2"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/purple_500"
-        android:background="@color/cardview_light_background"
-
-        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#dcdcdc"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -307,7 +285,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Enter License Name"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
 
         <TextView
@@ -323,7 +301,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Enter License No"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -347,23 +325,18 @@ app:strokeWidth="1dp"
         </RelativeLayout>
 
     </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#E5E4E2"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/purple_500"
-        android:background="@color/cardview_light_background"
-
-        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#dcdcdc"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -378,7 +351,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Amount"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -440,7 +413,7 @@ app:strokeWidth="1dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text="mm/dd/yyyy"
-                android:padding="10dp"
+                android:padding="7dp"
                 android:textColor="@color/black"
                 />
             <ImageView
@@ -474,7 +447,7 @@ app:strokeWidth="1dp"
                 android:layout_width="match_parent"
                 android:text="--:-- --"
                 android:textColor="@color/black"
-                android:padding="10dp"
+                android:padding="7dp"
                 />
             <ImageView
                 android:layout_width="wrap_content"
@@ -486,11 +459,16 @@ app:strokeWidth="1dp"
 
         </RelativeLayout>
     </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#dcdcdc"/>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="10dp"
     android:layout_margin="5dp">
         <TextView
             android:layout_width="wrap_content"
@@ -505,7 +483,7 @@ app:strokeWidth="1dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_border"
             android:hint="Comments"
-            android:padding="10dp" />
+            android:padding="7dp" />
 
 </LinearLayout>
 
